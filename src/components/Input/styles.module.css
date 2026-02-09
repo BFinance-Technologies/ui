@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+.container:focus-within {
+  border-color: rgba(20, 21, 26, 0.6);
+}
+
+.container:hover:not(:focus-within) {
+  border-color: rgba(20, 21, 26, 0.3);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.input {
+  width: 100%;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input::placeholder {
+  color: var(--placeholder-color);
+}
+
+.input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
