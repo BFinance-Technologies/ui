@@ -3,7 +3,10 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "workspaces": ["docs", "packages/*"],
+  "workspaces": [
+    "docs",
+    "packages/*"
+  ],
   "scripts": {
     "storybook": "npm -w docs run storybook",
     "build-storybook": "npm -w docs run build-storybook",
