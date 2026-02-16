@@ -1,43 +1,56 @@
 import React from 'react'
 import styles from './styles.module.css'
 
-const Button = ({
+const LinkButton = ({
   children,
-  onClick,
-  type = 'button',
-  variant = 'primary',
+  href = '#',
   size = 'md',
   shape = 'rounded',
-  target = 'default',
+  target = 'default', 
   leftIcon,
   rightIcon,
   className,
   disabled = false,
   ...props
 }) => {
+  const allowedSizes = ['md', 'sm']
+  const normalizedSize = allowedSizes.includes(size) ? size : 'md'
+
   const buttonClasses = [
     styles.button,
-    styles[variant],
-    styles[size],
+    styles.primary, // LinkButton is always primary
+    styles.link,
+    styles[normalizedSize],
     styles[shape],
     styles[target],
     disabled && styles.disabled,
     className
   ].filter(Boolean).join(' ')
 
+  function handleClick(e) {
+    if (disabled) {
+      e.preventDefault()
+      e.stopPropagation()
+      return
+    }
+    if (props.onClick) props.onClick(e)
+  }
+
   return (
-    <button
-      type={type}
+    <a
+      href={disabled ? undefined : href}
       className={buttonClasses}
-      onClick={onClick}
-      disabled={disabled}
+      onClick={handleClick}
+      aria-disabled={disabled}
+      tabIndex={disabled ? -1 : 0}
       {...props}
     >
       {leftIcon && <span className={styles.icon}>{leftIcon}</span>}
       {children && <span className={styles.text}>{children}</span>}
       {rightIcon && <span className={styles.icon}>{rightIcon}</span>}
-    </button>
+    </a>
   )
 }
 
-export default Button
+export default LinkButton
+

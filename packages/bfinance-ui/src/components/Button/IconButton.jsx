@@ -1,18 +1,17 @@
 import React from 'react'
 import styles from './styles.module.css'
 
-const Button = ({
-  children,
+const IconButton = ({
+  icon,
   onClick,
   type = 'button',
   variant = 'primary',
   size = 'md',
   shape = 'rounded',
   target = 'default',
-  leftIcon,
-  rightIcon,
   className,
   disabled = false,
+  ariaLabel,
   ...props
 }) => {
   const buttonClasses = [
@@ -21,6 +20,7 @@ const Button = ({
     styles[size],
     styles[shape],
     styles[target],
+    styles.iconOnly,
     disabled && styles.disabled,
     className
   ].filter(Boolean).join(' ')
@@ -31,13 +31,13 @@ const Button = ({
       className={buttonClasses}
       onClick={onClick}
       disabled={disabled}
+      aria-label={ariaLabel}
       {...props}
     >
-      {leftIcon && <span className={styles.icon}>{leftIcon}</span>}
-      {children && <span className={styles.text}>{children}</span>}
-      {rightIcon && <span className={styles.icon}>{rightIcon}</span>}
+      <span className={styles.icon}>{icon}</span>
     </button>
   )
 }
 
-export default Button
+export default IconButton
+
