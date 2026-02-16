@@ -1,0 +1,83 @@
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../assets/fonts/HelveticaNeue/HelveticaNeue-Roman.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../assets/fonts/HelveticaNeue/HelveticaNeue-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter/Inter-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter/Inter-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter/Inter-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter/Inter-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Onest';
+  src: url('../assets/fonts/Onest/Onest-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Text colors */
+  --text-color: #14151A;
+  --text-color-white: #FFFFFF;
+  --text-gray-color: rgba(13, 17, 38, 0.40);
+  --text-green-color: #166E3F;
+
+  /* Background colors */
+  --background-color: #F7F7F8;
+  --background-color-white: #FFFFFF;
+  --background-gray-color: rgba(10, 15, 41, 0.04);
+  --background-green-color: #D1FAE4;
+  --background-button-primary: #14151A;
+
+  /* Border colors */
+  --border-gray-color: #DEE0E3;
+  --border-gray-hover-color: #C8CAD0;
+
+  /* Other colors */
+  --circle-green-color: #26BD6C;
+
+  /* Fonts */
+  --font-Helvetica-Neue: 'Helvetica Neue', sans-serif;
+  --font-Inter: 'Inter', sans-serif;
+  --font-Onest: 'Onest', sans-serif;
+}
