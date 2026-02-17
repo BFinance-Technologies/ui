@@ -1,3 +1,4 @@
+import React from 'react';
 import { Dropdown } from '@bf/bfinance-ui';
 
 export default {
@@ -7,17 +8,25 @@ export default {
   argTypes: {
     title: { control: 'text' },
     options: { control: 'object' },
-    fontSize: { control: 'text' },
-    fontWeight: { control: 'text' },
-    lineHeight: { control: 'text' },
-    menuWidth: { control: 'text' },
-    customTextStyles: { control: 'object' },
-    customIconStyles: { control: 'object' },
     icon: { control: 'text' },
+    position: { control: { type: 'select', options: ['downLeft', 'downRight', 'upLeft', 'upRight'] } },
   },
 };
 
 export const Default = {
+  render: (args) => (
+    <div style={{ display: 'flex', gap: 16, flexDirection: 'column', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+      <span>Down</span>
+        <div style={{ display: 'flex', gap: 16, alignItems: 'center' , marginBottom: '100px'}}>
+          <Dropdown {...args} position='downLeft' defaultOpen />
+          <Dropdown {...args} position='downRight' defaultOpen />
+        </div>
+        <span>Up</span>
+        <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
+          <Dropdown {...args} position='upLeft' defaultOpen />
+          <Dropdown {...args} position='upRight' defaultOpen />
+        </div></div>
+  ),
   args: {
     title: 'Select an option',
     options: [
@@ -25,12 +34,8 @@ export const Default = {
       { label: 'Option 2', value: 'option2' },
       { label: 'Option 3', value: 'option3' },
     ],
-    fontSize: '16px',
-    fontWeight: '400',
-    lineHeight: '24px',
-    menuWidth: '200px',
-    customTextStyles: {},
-    customIconStyles: {},
+    menuWidth: '150px',
+    width: '200px',
   },
 };
 
