@@ -1,0 +1,26 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+} 
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: var(--measurements-radius-xxxl, 24px);
+  border: 1px solid var(--border-base-neutral-subtle, #C8CAD0);
+  background: var(--background-surface-default, #FFF);
+  box-shadow: 0 10px 16px -3px rgba(20, 21, 26, 0.08), 0 3px 6px -2px rgba(20, 21, 26, 0.05);
+  z-index: 1001;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: visible;
+}
