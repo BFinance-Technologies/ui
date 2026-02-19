@@ -1,0 +1,130 @@
+.switchWrapper {
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  gap: 16px;
+  user-select: none;
+}
+
+ /* Track */
+.track {
+  position: relative;
+  flex-shrink: 0;
+  border-radius: 999px;
+  background: #BABDC5;
+  transition: background 0.2s ease;
+}
+.track.active {
+  background: var(--circle-green-color);
+}
+.switchWrapper:not(.disabled):hover .track {
+  background: #9EA2AD;
+}
+.switchWrapper:not(.disabled):hover .track.active {
+  background: #21A65E;
+}
+.track:not(.disabled):focus-visible {
+  box-shadow: 0 0 0 1px #FFF, 0 0 0 2.5px rgba(200, 178, 255, 0.60);
+  outline: none;
+  border-radius: var(--measurements-radius-full, 999px);
+}
+.track:not(.disabled):focus-visible .active {
+  border-radius: var(--measurements-radius-full, 999px);
+  box-shadow: 0 0 0 1px #FFF, 0 0 0 2.5px rgba(200, 178, 255, 0.60);
+  outline: none;
+}
+
+/* Disabled */
+.disabled {
+  cursor: not-allowed;
+}
+.disabled .track {
+  background: #E9EAEC;
+}
+.disabled .thumb {
+  background: #C8CAD0;
+  box-shadow: none;
+}
+.disabled .track.active {
+  background: #C3F8DC;
+}
+.disabled .track.active .thumb {
+  background: #FFF;
+  box-shadow: none;
+}
+
+/* Thumb */
+.thumb {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #FFF;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: left 0.2s ease;
+}
+
+/* Sizes */
+.sm .track {
+  width: 28px;
+  height: 16px;
+}
+.sm .thumb {
+  width: 12px;
+  height: 12px;
+  left: 2px;
+}
+.sm .track.active .thumb {
+  left: 14px;
+}
+.md .track {
+  width: 34px;
+  height: 20px;
+}
+.md .thumb {
+  width: 16px;
+  height: 16px;
+  left: 2px;
+}
+.md .track.active .thumb {
+  left: 16px;
+}
+
+/* Text */
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.label {
+  font-family: var(--font-Inter);
+  font-weight: 500;
+  color: #14151A;
+}
+.caption {
+  font-family: var(--font-Inter);
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.60);
+}
+.sm .label {
+  font-size: 14px;
+  letter-spacing: -0.1px;
+}
+.sm .caption {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+}
+.md .label {
+  font-size: 16px;
+  letter-spacing: -0.2px;
+}
+.md .caption {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+
+
