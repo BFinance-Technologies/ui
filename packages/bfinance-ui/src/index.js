@@ -5,5 +5,6 @@ export * from "./components/Status";
 export * from "./components/Checkbox";
 export * from "./components/Modal";
 export * from "./components/Tooltip";
+export * from "./components/Toggle";
 
 import "./styles/tokens.css";
