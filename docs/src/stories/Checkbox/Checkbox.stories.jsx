@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Checkbox } from '@bf/bfinance-ui';
 
 export default {
@@ -6,49 +6,63 @@ export default {
   component: Checkbox,
   tags: ['autodocs'],
   argTypes: {
-    onChange: { action: 'changed' },
-    checked: { control: 'boolean' },
+    size: {
+      control: { type: 'select' },
+      options: ['sm', 'md'],
+    },
+    isChecked: { control: 'boolean' },
+    indeterminate: { control: 'boolean' },
+    label: { control: 'text' },
+    caption: { control: 'text' },
     disabled: { control: 'boolean' },
   },
 };
 
-export const Checked = {
-  args: {
-    checked: true,
-    disabled: false,
-  },
+const Template = (args) => (
+  <div style={{ padding: 20 }}>
+    <Checkbox {...args} />
+  </div>
+);
+
+export const Default = Template.bind({});
+Default.args = {
+  size: 'md',
+  isChecked: false,
+  indeterminate: false,
+  label: '',
+  caption: '',
+  disabled: false,
 };
 
-export const Disabled = {
-  args: {
-    checked: false,
-    disabled: true,
-  },
+export const Checked = Template.bind({});
+Checked.args = {
+  size: 'md',
+  isChecked: true,
+  label: 'Accept terms and conditions',
+  disabled: false,
 };
 
-export const Interactive = {
-  render: (args) => {
-    const [isChecked, setIsChecked] = useState(!!args.checked);
-
-    return (
-      <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-        <label style={{ display: 'inline-flex', gap: 8, alignItems: 'center', cursor: args.disabled ? 'not-allowed' : 'pointer' }}>
-          <Checkbox
-            {...args}
-            checked={isChecked}
-            onChange={(e) => {
-              const next = e?.target ? e.target.checked : !isChecked;
-              setIsChecked(next);
-              if (args.onChange) args.onChange(e);
-            }}
-          />
-        </label>
-      </div>
-    );
-  },
-  args: {
-    checked: false,
-    disabled: false,
-  },
+export const Indeterminate = Template.bind({});
+Indeterminate.args = {
+  size: 'md',
+  isChecked: true,
+  indeterminate: true,
+  label: 'Select all',
+  caption: 'Some items are selected',
+  disabled: false,
 };
 
+export const Sizes = () => (
+  <div style={{ display: 'flex', gap: 24, padding: 20 }}>
+    <Checkbox size="sm" isChecked={false} label="Small" />
+    <Checkbox size="md" isChecked={true} label="Medium" />
+  </div>
+);
+
+export const Disabled = () => (
+  <div style={{ display: 'flex', gap: 24, padding: 20 }}>
+    <Checkbox size="md" label="Unchecked disabled" disabled />
+    <Checkbox size="md" isChecked label="Checked disabled" disabled />
+    <Checkbox size="md" isChecked indeterminate label="Indeterminate disabled" disabled />
+  </div>
+);
