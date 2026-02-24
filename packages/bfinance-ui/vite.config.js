@@ -4,6 +4,11 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
+  resolve: {
+    alias: {
+      '@bfinance/icons': '@bfinance/icons/dist/index.js',
+    },
+  },
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.js"),
