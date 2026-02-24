@@ -28,5 +28,8 @@
     "react-dom": "^18.3.1",
     "rimraf": "^6.0.0",
     "vite": "^5.4.1"
+  },
+  "dependencies": {
+    "@bfinance/icons": "^1.0.2"
   }
 }
