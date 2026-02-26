@@ -267,6 +267,22 @@
   border-radius: 12px;
 }
 
+.rounded.sm {
+  border-radius: 10px;
+}
+
+.rounded.xs {
+  border-radius: 8px;
+}
+
+.rounded.md {
+  border-radius: 12px;
+}
+
+.rounded.lg {
+  border-radius: 16px;
+}
+
 .pill {
   border-radius: 999px;
 }
