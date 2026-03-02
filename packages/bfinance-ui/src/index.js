@@ -5,7 +5,6 @@ export * from "./components/Dropdown";
 export * from "./components/Input";
 export * from "./components/Modal";
 export * from "./components/Notification";
-export * from "./components/Status";
 export * from "./components/Tooltip";
 export * from "./components/Toggle";
 export * from "./components/Textarea";

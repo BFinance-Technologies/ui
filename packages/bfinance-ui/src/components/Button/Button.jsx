@@ -9,6 +9,7 @@ const Button = ({
   size = 'md', // lg, md, sm, xs
   shape = 'rounded', // rounded, pill
   mode = 'default', // default, destructive
+  label = 'Button',
   leftIcon,
   rightIcon,
   className,
@@ -34,6 +35,7 @@ const Button = ({
       {...props}
     >
       {leftIcon && <span className={styles.icon}>{leftIcon}</span>}
+      {label && <span className={styles.text}>{label}</span>}
       {children && <span className={styles.text}>{children}</span>}
       {rightIcon && <span className={styles.icon}>{rightIcon}</span>}
     </button>
