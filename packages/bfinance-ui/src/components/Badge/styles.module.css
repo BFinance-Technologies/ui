@@ -1,0 +1,217 @@
+/* ── Base ────────────────────────────────────*/
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-family: var(--font-Inter);
+  font-weight: 500;
+  white-space: nowrap;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ── Shape ───────────────────────────────────*/
+.rounded.lg {
+  border-radius: 8px;
+}
+
+.rounded.md {
+  border-radius: 8px;
+}
+
+.rounded.sm {
+  border-radius: 6px;
+}
+
+.rounded.xs {
+  border-radius: 4px;
+}
+
+.pill {
+  border-radius: 999px;
+}
+
+/* ── Sizes ───────────────────────────────────*/
+.lg {
+  padding: 4px 6px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.lg .icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.md {
+  padding: 2px 4px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.md .icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.sm {
+  padding: 4px 6px;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0;
+}
+
+.sm .icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.xs {
+  padding: 0 2px;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0;
+}
+
+.xs .icon svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* ── Colors ──────────────────────────────────*/
+.gray {
+  background-color: #E9EAEC;
+  color: rgba(0, 0, 0, 0.60);
+}
+
+.gray .icon svg {
+  fill: rgba(0, 0, 0, 0.60);
+}
+
+.gray.disabled {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+.gray.disabled .icon svg {
+  fill: rgba(0, 0, 0, 0.25);
+}
+
+.blue {
+  background-color: #E3EAFD;
+  color: #133A9A;
+}
+
+.blue .icon svg {
+  fill: #133A9A;
+}
+
+.blue.disabled {
+  background-color: #F0F4FE;
+  color: rgba(51,104, 240, 0.50);
+}
+
+.blue.disabled .icon svg {
+  fill: #3368F0;
+  opacity: 0.5;
+}
+
+.green {
+  background-color: #D1FAE4;
+  color: #166E3F;
+}
+
+.green .icon svg {
+  fill: #166E3F;
+}
+
+.green.disabled {
+  background-color: #EDFDF4;
+  color: rgba(38, 189, 108, 0.50);
+}
+
+.green.disabled .icon svg {
+  fill: #26BD6C;
+  opacity: 0.5;
+}
+
+.orange {
+  background-color: #FDEAD8;
+  color: #AE590A;
+}
+
+.orange .icon svg {
+  fill: #AE590A;
+}
+
+.orange.disabled {
+  background-color: #FEF4EC;
+  color: rgba(244, 142, 47, 0.50);
+}
+
+.orange.disabled .icon svg {
+  fill: #F48E2F;
+  opacity: 0.5;
+}
+
+.red {
+  background-color: #FCE5E4;
+  color: #E6483D;
+}
+
+.red .icon svg {
+  fill: #E6483D;
+}
+
+.red.disabled {
+  background-color: #FDF2F1;
+  color: rgba(230, 72, 61, 0.50);
+}
+
+.red.disabled .icon svg {
+  fill: #E6483D;
+  opacity: 0.5;
+}
+
+.purple {
+  background-color: #ECDFFB;
+  color: #5314A3;
+}
+
+.purple .icon svg {
+  fill: #5314A3;
+}
+
+.purple.disabled {
+  background-color: #ECDFFB;
+  color: rgba(135, 61, 230, 0.50);
+}
+
+.purple.disabled .icon svg {
+  fill: #873DE6;
+  opacity: 0.5;
+}
+
+.white {
+  background-color: #FFFFFF;
+  color: rgba(0, 0, 0, 0.60);
+}
+
+.white .icon svg {
+  fill: rgba(0, 0, 0, 0.60);
+}
+
+.white.disabled {
+  background-color: #FFFFFF;
+  color: rgba(0, 0, 0, 0.25);
+}
+
+.white.disabled .icon svg {
+  fill: rgba(0, 0, 0, 0.25);
+}
