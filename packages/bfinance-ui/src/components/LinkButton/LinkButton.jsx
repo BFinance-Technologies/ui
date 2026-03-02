@@ -4,25 +4,19 @@ import styles from './styles.module.css'
 const LinkButton = ({
   children,
   href = '#',
-  size = 'md',
-  shape = 'rounded',
-  target = 'default', 
+  size = 'md',  // md, sm
+  mode = 'default', // default, destructive
   leftIcon,
   rightIcon,
   className,
   disabled = false,
   ...props
 }) => {
-  const allowedSizes = ['md', 'sm']
-  const normalizedSize = allowedSizes.includes(size) ? size : 'md'
 
   const buttonClasses = [
     styles.button,
-    styles.primary, // LinkButton is always primary
-    styles.link,
-    styles[normalizedSize],
-    styles[shape],
-    styles[target],
+    styles[size],
+    styles[mode],
     disabled && styles.disabled,
     className
   ].filter(Boolean).join(' ')

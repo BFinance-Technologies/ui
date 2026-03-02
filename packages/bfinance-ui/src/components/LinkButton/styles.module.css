@@ -1,0 +1,121 @@
+/* ── Base ────────────────────────────────────*/
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--font-Inter);
+  font-weight: 500;
+  text-decoration: none;
+  background-color: transparent;
+  transition: all 0.2s ease-in-out;
+  white-space: nowrap;
+}
+
+.button:not(.disabled):focus {
+  outline: none;
+}
+
+.button:not(.disabled):focus-visible {
+  border-color: var(--border-action-focus, #924FE8);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+}
+
+/* ── Variant: default ────────────────────────────────────*/
+.default {
+  color: #14151A;
+}
+
+.default svg {
+  fill: #14151A;
+}
+
+@media (hover: hover) {
+  .default:not(.disabled):hover {
+    color: rgba(0, 0, 0, 0.60);
+  }
+}
+
+.default:not(.disabled):hover svg {
+  fill: rgba(0, 0, 0, 0.60);
+}
+
+/* ── Mode: destructive ────────────────────────────────────*/
+.destructive {
+  color: #E6483D;
+}
+
+.destructive svg {
+  fill: #E6483D;
+}
+
+@media (hover: hover) {
+  .destructive:not(.disabled):hover {
+    color: rgba(230, 72, 61, 0.70);
+  }
+}
+
+.destructive:not(.disabled):hover svg {
+  fill: rgba(230, 72, 61, 0.70);
+}
+
+.destructive.disabled {
+  color: rgba(230, 72, 61, 0.30);
+}
+
+.destructive.disabled svg {
+  fill: rgba(230, 72, 61, 0.30);
+}
+
+/* ── Disabled ────────────────────────────────────*/
+.disabled {
+  cursor: not-allowed;
+  color: rgba(0, 0, 0, 0.25);
+  opacity: 1;
+}
+
+.disabled svg {
+  fill: rgba(0, 0, 0, 0.25);
+}
+
+/* ── Sizes ────────────────────────────────────*/
+.md {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+
+.sm {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+}
+
+/* ── Icon ────────────────────────────────────*/
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.md .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.sm .icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* ── Text ────────────────────────────────────*/
+.text {
+  display: inline-flex;
+  align-items: center;
+}

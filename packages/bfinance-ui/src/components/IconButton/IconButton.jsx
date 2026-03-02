@@ -2,14 +2,14 @@ import React from 'react'
 import styles from './styles.module.css'
 
 const IconButton = ({
-  icon,
   onClick,
   type = 'button',
-  variant = 'primary',
-  size = 'md',
-  shape = 'rounded',
-  target = 'default',
+  variant = 'primary', // primary, secondary, tertiary, ghost
+  size = 'md',   // lg, md, sm, xs
+  shape = 'rounded', // rounded, pill
+  mode = 'default', // default, destructive
   className,
+  children,
   disabled = false,
   ariaLabel,
   ...props
@@ -19,7 +19,7 @@ const IconButton = ({
     styles[variant],
     styles[size],
     styles[shape],
-    styles[target],
+    styles[mode],
     styles.iconOnly,
     disabled && styles.disabled,
     className
@@ -34,10 +34,9 @@ const IconButton = ({
       aria-label={ariaLabel}
       {...props}
     >
-      <span className={styles.icon}>{icon}</span>
+      <span className={styles.icon}>{children}</span>
     </button>
   )
 }
 
 export default IconButton
-

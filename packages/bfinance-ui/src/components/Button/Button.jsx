@@ -5,10 +5,10 @@ const Button = ({
   children,
   onClick,
   type = 'button',
-  variant = 'primary',
-  size = 'md',
-  shape = 'rounded',
-  target = 'default',
+  variant = 'primary', // primary, secondary, tertiary, ghost
+  size = 'md', // lg, md, sm, xs
+  shape = 'rounded', // rounded, pill
+  mode = 'default', // default, destructive
   leftIcon,
   rightIcon,
   className,
@@ -16,11 +16,11 @@ const Button = ({
   ...props
 }) => {
   const buttonClasses = [
-    styles.button,
+    styles.button,  
     styles[variant],
     styles[size],
     styles[shape],
-    styles[target],
+    styles[mode],
     disabled && styles.disabled,
     className
   ].filter(Boolean).join(' ')
