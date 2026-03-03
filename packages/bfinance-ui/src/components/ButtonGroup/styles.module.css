@@ -1,0 +1,169 @@
+.buttonGroup {
+  display: inline-flex;
+  align-items: stretch;
+  border: 1px solid #DEE0E3;
+  border-radius: 16px;
+  background: var(--background-color-white, #fff);
+}
+
+.buttonGroup .btn + .btn {
+  border-left: 1px solid #DEE0E3;
+}
+
+/* ── Button base ────────────────────────────────────*/
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  border-radius: 0;
+  background: var(--background-color-white, #fff);
+  color: var(--text-color, #14151A);
+  font-family: var(--font-Inter);
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease-in-out;
+}
+
+/* border-radius для корректного box-shadow при фокусе */
+.buttonGroup.rounded.lg {
+  border-radius: 12px;
+}
+
+.buttonGroup.rounded.lg .btn:first-child {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.buttonGroup.rounded.lg .btn:last-child {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.buttonGroup.rounded.md {
+  border-radius: 12px;
+}
+
+.buttonGroup.rounded.md .btn:first-child {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.buttonGroup.rounded.md .btn:last-child {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.buttonGroup.rounded.sm {
+  border-radius: 10px;
+}
+
+.buttonGroup.rounded.sm .btn:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.buttonGroup.rounded.sm .btn:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.buttonGroup.pill {
+  border-radius: 999px;
+}
+
+.buttonGroup.pill .btn:first-child {
+  border-top-left-radius: 999px;
+  border-bottom-left-radius: 999px;
+}
+
+.buttonGroup.pill .btn:last-child {
+  border-top-right-radius: 999px;
+  border-bottom-right-radius: 999px;
+}
+
+/* ── Focus ────────────────────────────────────*/
+.btn:focus {
+  outline: none;
+}
+
+.btn:not(.disabled):focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 2px #B78AF0;
+}
+
+/* ── Hover ────────────────────────────────────*/
+@media (hover: hover) {
+  .btn:not(.disabled):hover {
+    background: #F7F7F8;
+  }
+}
+
+/* ── Active press ────────────────────────────────────*/
+.btn:not(.disabled):active,
+.btn.pressing {
+  transform: translateY(1px);
+}
+
+/* ── Sizes ────────────────────────────────────*/
+.btn.lg {
+  padding: 12px 14px;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+
+.btn.md {
+  padding: 10px 12px;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+}
+
+.btn.sm {
+  padding: 6px 10px;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+}
+
+/* ── Selected state ────────────────────────────────────*/
+.active {
+  background: #F7F7F8;
+}
+
+/* ── Disabled state ────────────────────────────────────*/
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* ── Icon ────────────────────────────────────*/
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lg .icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.md .icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.sm .icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ── Text ────────────────────────────────────*/
+.text {
+  display: inline-flex;
+  align-items: center;
+}

@@ -33,22 +33,28 @@ export default {
 
 export const Primary = {
   args: {
-    label: 'Primary',
+    children: 'Primary',
     variant: 'primary',
     size: 'md',
     shape: 'rounded',
   },
 
   render: (args) => (
-    <Button {...args} size="md" label="Button" leftIcon={<ScanLine/>} rightIcon={<ArrowRightLine/>}>
-      <Badge size="md" color="white">16</Badge>
+    <Button 
+      {...args} 
+      size="md" 
+      leftIcon={<ScanLine/>} 
+      rightIcon={<ArrowRightLine/>}
+      badge={<Badge size="md" color="white">16</Badge>}
+    >
+      {args.children}
     </Button>
   ),
 };
 
 export const Secondary = {
   args: {
-    label: 'Secondary',
+    children: 'Secondary',
     variant: 'secondary',
     size: 'md',
     shape: 'rounded',
@@ -57,7 +63,7 @@ export const Secondary = {
 
 export const Tertiary = {
   args: {
-    label: 'Tertiary',
+    children: 'Tertiary',
     variant: 'tertiary',
     size: 'md',
     shape: 'rounded',
@@ -66,7 +72,7 @@ export const Tertiary = {
 
 export const Ghost = {
   args: {
-    label: 'Ghost',
+    children: 'Ghost',
     variant: 'ghost',
     size: 'md',
     shape: 'rounded',
@@ -75,7 +81,7 @@ export const Ghost = {
 
 export const PrimaryDestructive = {
   args: {
-    label: 'Delete',
+    children: 'Delete',
     variant: 'primary',
     mode: 'destructive',
     size: 'md',
@@ -84,7 +90,7 @@ export const PrimaryDestructive = {
 
 export const SecondaryDestructive = {
   args: {
-    label: 'Delete',
+    children: 'Delete',
     variant: 'secondary',
     mode: 'destructive',
     size: 'md',
@@ -93,7 +99,7 @@ export const SecondaryDestructive = {
 
 export const TertiaryDestructive = {
   args: {
-    label: 'Delete',
+    children: 'Delete',
     variant: 'tertiary',
     mode: 'destructive',
     size: 'md',
@@ -102,7 +108,7 @@ export const TertiaryDestructive = {
 
 export const GhostDestructive = {
   args: {
-    label: 'Delete',
+    children: 'Delete',
     variant: 'ghost',
     mode: 'destructive',
     size: 'md',
@@ -112,10 +118,10 @@ export const GhostDestructive = {
 export const Sizes = {
   render: (args) => (
     <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-      <Button {...args} size="lg" label="Large" />
-      <Button {...args} size="md" label="Medium" />
-      <Button {...args} size="sm" label="Small" />
-      <Button {...args} size="xs" label="X-Small" />
+      <Button {...args} size="lg">Large</Button>
+      <Button {...args} size="md">Medium</Button>
+      <Button {...args} size="sm">Small</Button>
+      <Button {...args} size="xs">X-Small</Button>
     </div>
   ),
   args: {
@@ -126,8 +132,8 @@ export const Sizes = {
 export const Shapes = {
   render: (args) => (
     <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-      <Button {...args} shape="rounded" label="Button Rounded" />
-      <Button {...args} shape="pill" label="Button Pill" />
+      <Button {...args} shape="rounded">Button Rounded</Button>
+      <Button {...args} shape="pill">Button Pill</Button>
     </div>
   ),
   args: {
@@ -141,20 +147,30 @@ export const WithIcons = {
     return (
       <>
         <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-          <Button variant="primary" {...args} leftIcon={<ScanLine/>} rightIcon={<ArrowRightLine/>} size="lg" label="With icons" />
-          <Button variant="secondary" {...args} leftIcon={<ScanLine/>} rightIcon={<ArrowRightLine/>} size="md" label="With icons" />
-          <Button variant="tertiary" {...args} leftIcon={<ScanLine/>} rightIcon={<ArrowRightLine/>} size="sm" label="With icons" />
-          <Button variant="ghost" {...args} leftIcon={<ScanLine/>} rightIcon={<ArrowRightLine/>} size="xs" label="With icons" />
+          <Button variant="primary" {...args} leftIcon={<ScanLine/>} rightIcon={<ArrowRightLine/>} size="lg">With icons</Button>
+          <Button variant="secondary" {...args} leftIcon={<ScanLine/>} rightIcon={<ArrowRightLine/>} size="md">With icons</Button>
+          <Button variant="tertiary" {...args} leftIcon={<ScanLine/>} rightIcon={<ArrowRightLine/>} size="sm">With icons</Button>
+          <Button variant="ghost" {...args} leftIcon={<ScanLine/>} rightIcon={<ArrowRightLine/>} size="xs">With icons</Button>
         </div>
           <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginTop: 20 }}>
-          <Button variant="primary" mode="destructive" {...args} leftIcon={<ScanLine/>} rightIcon={<ArrowRightLine/>} size="lg" label="With icons" />
-          <Button variant="secondary" mode="destructive" {...args} leftIcon={<ScanLine/>} rightIcon={<ArrowRightLine/>} size="md" label="With icons" />
-          <Button variant="tertiary" mode="destructive" {...args} leftIcon={<ScanLine/>} rightIcon={<ArrowRightLine/>} size="sm" label="With icons" />
-          <Button variant="ghost" mode="destructive" {...args} leftIcon={<ScanLine/>} rightIcon={<ArrowRightLine/>} size="xs" label="With icons" />
+          <Button variant="primary" mode="destructive" {...args} leftIcon={<ScanLine/>} rightIcon={<ArrowRightLine/>} size="lg">With icons</Button>
+          <Button variant="secondary" mode="destructive" {...args} leftIcon={<ScanLine/>} rightIcon={<ArrowRightLine/>} size="md">With icons</Button>
+          <Button variant="tertiary" mode="destructive" {...args} leftIcon={<ScanLine/>} rightIcon={<ArrowRightLine/>} size="sm">With icons</Button>
+          <Button variant="ghost" mode="destructive" {...args} leftIcon={<ScanLine/>} rightIcon={<ArrowRightLine/>} size="xs">With icons</Button>
         </div>
       </>
     )
   }
+};
+
+export const WithBadge = {
+  render: (args) => (
+    <Button variant="secondary" {...args} badge={<Badge size="md" color="white" stroke>16</Badge>}>With badge</Button>
+  ),
+  args: {
+    size: 'md',
+    shape: 'rounded',
+  },
 };
 
 export const Disabled = {
@@ -165,16 +181,16 @@ export const Disabled = {
   render: (args) => (
     <> 
       <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-        <Button variant="primary" {...args} size="lg" label="Large" />
-        <Button variant="secondary" {...args} size="md" label="Medium" />
-        <Button variant="tertiary" {...args} size="sm" label="Small" />
-        <Button variant="ghost" {...args} size="xs" label="X-Small" />
+        <Button variant="primary" {...args} size="lg">Large</Button>
+        <Button variant="secondary" {...args} size="md">Medium</Button>
+        <Button variant="tertiary" {...args} size="sm">Small</Button>
+        <Button variant="ghost" {...args} size="xs">X-Small</Button>
       </div>
       <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginTop: 20 }}>
-        <Button variant="primary" mode="destructive" {...args} label="Disabled" />
-        <Button variant="secondary" mode="destructive" {...args} label="Disabled" />
-        <Button variant="tertiary" mode="destructive" {...args} label="Disabled" />
-        <Button variant="ghost" mode="destructive" {...args} label="Disabled" />
+        <Button variant="primary" mode="destructive" {...args}>Disabled</Button>
+        <Button variant="secondary" mode="destructive" {...args}>Disabled</Button>
+        <Button variant="tertiary" mode="destructive" {...args}>Disabled</Button>
+        <Button variant="ghost" mode="destructive" {...args}>Disabled</Button>
       </div>
     </>
   ),
