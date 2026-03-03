@@ -9,6 +9,7 @@ const Badge = ({
   rightIcon,
   children,
   disabled = false,
+  stroke = false,
   className = '',
   ...props
 }) => {
@@ -19,6 +20,7 @@ const Badge = ({
     styles[shape],
     className,
     disabled && styles.disabled,
+    stroke && styles.stroke,
   ]
     .filter(Boolean)
     .join(' '); 

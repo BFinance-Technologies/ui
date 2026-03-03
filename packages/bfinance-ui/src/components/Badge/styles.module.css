@@ -17,6 +17,10 @@
   flex-shrink: 0;
 }
 
+.stroke {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
 /* ── Shape ───────────────────────────────────*/
 .rounded.lg {
   border-radius: 8px;
