@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './styles.module.css';
 
 const Badge = ({
-  color = 'gray', // gray, blue, green, orange, red, purple, white
+  color = 'gray', // gray, blue, green, orange, red, purple, white, white-destructive
   size = 'md',   // lg, md, sm, xs
   shape = 'rounded', // rounded, pill
   leftIcon,

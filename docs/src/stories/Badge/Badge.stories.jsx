@@ -9,7 +9,7 @@ export default {
   argTypes: {
     color: {
       control: 'select',
-      options: ['gray', 'blue', 'green', 'orange', 'red', 'purple', 'white'],
+      options: ['gray', 'blue', 'green', 'orange', 'red', 'purple', 'white', 'white-destructive'],
     },
     size: {
       control: 'select',
@@ -244,15 +244,44 @@ export const White = {
   ),
 };
 
-export const Pill = {
+export const WhiteDestructive = {
   args: {
-    color: 'blue',
-    size: 'lg',
-    shape: 'pill',
-    children: 'Badge',
-    leftIcon: <CheckboxCircleFill/>,
-    rightIcon: <Hashtag/>,
+    color: 'white-destructive',
+    shape: 'rounded',
   },
+
+  render: (args) => (
+    <>
+      <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+        <Badge size="lg"  leftIcon={<CheckboxCircleFill/> } rightIcon={<Hashtag/>} {...args}>Badge</Badge>
+        <Badge size="md"  leftIcon={<CheckboxCircleFill/> } rightIcon={<Hashtag/>} {...args}>Badge</Badge>
+        <Badge size="sm"  leftIcon={<CheckboxCircleFill/> } rightIcon={<Hashtag/>} {...args}>Badge</Badge>
+        <Badge size="xs"  leftIcon={<CheckboxCircleFill/> } rightIcon={<Hashtag/>} {...args}>Badge</Badge>
+      </div>
+      <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginTop: 20 }}>
+        <Badge size="lg"  leftIcon={<CheckboxCircleFill/> } rightIcon={<Hashtag/>} disabled {...args}>Badge</Badge>
+        <Badge size="md"  leftIcon={<CheckboxCircleFill/> } rightIcon={<Hashtag/>} disabled {...args}>Badge</Badge>
+        <Badge size="sm"  leftIcon={<CheckboxCircleFill/> } rightIcon={<Hashtag/>} disabled {...args}>Badge</Badge>
+        <Badge size="xs"  leftIcon={<CheckboxCircleFill/> } rightIcon={<Hashtag/>} disabled {...args}>Badge</Badge>
+      </div>
+    </>
+  ),  
+};
+export const Shapes = {
+  args: {
+    children: 'Badge',
+  },
+
+  render: (args) => (
+    <>
+      <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+        <Badge size="lg"  leftIcon={<CheckboxCircleFill/> } rightIcon={<Hashtag/>} shape="rounded" {...args}>Badge</Badge>
+      </div>
+      <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginTop: 20 }}>
+        <Badge size="lg"  leftIcon={<CheckboxCircleFill/> } rightIcon={<Hashtag/>} shape="pill" {...args}>Badge</Badge>
+      </div>
+    </>
+  ),
 };
 
 export const Strokes = {

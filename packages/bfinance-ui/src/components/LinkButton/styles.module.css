@@ -26,6 +26,12 @@
   box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
 }
 
+/* ── Active press ────────────────────────────────────*/
+.button:not(.disabled):active,
+.button.pressing {
+  transform: translateY(1px);
+}
+
 /* ── Variant: default ────────────────────────────────────*/
 .default {
   color: #14151A;

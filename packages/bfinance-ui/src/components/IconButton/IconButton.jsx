@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './styles.module.css'
 
 const IconButton = ({
@@ -14,6 +14,8 @@ const IconButton = ({
   ariaLabel,
   ...props
 }) => {
+  const [isPressed, setIsPressed] = useState(false)
+
   const buttonClasses = [
     styles.button,
     styles[variant],
@@ -22,8 +24,22 @@ const IconButton = ({
     styles[mode],
     styles.iconOnly,
     disabled && styles.disabled,
+    isPressed && styles.pressing,
     className
   ].filter(Boolean).join(' ')
+
+  const handleKeyDown = (e) => {
+    if (disabled) return
+    if (e.key === ' ' || e.key === 'Enter') {
+      e.preventDefault()
+      setIsPressed(true)
+      onClick?.()
+    }
+  }
+
+  const handleKeyUp = (e) => {
+    if (e.key === ' ' || e.key === 'Enter') setIsPressed(false)
+  }
 
   return (
     <button
@@ -32,6 +48,10 @@ const IconButton = ({
       onClick={onClick}
       disabled={disabled}
       aria-label={ariaLabel}
+      aria-disabled={disabled}
+      tabIndex={disabled ? -1 : 0}
+      onKeyDown={handleKeyDown}
+      onKeyUp={handleKeyUp}
       {...props}
     >
       <span className={styles.icon}>{children}</span>

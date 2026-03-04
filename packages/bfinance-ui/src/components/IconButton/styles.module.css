@@ -20,7 +20,8 @@
   box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
 }
 
-.button:not(.disabled):active {
+.button:not(.disabled):active,
+.button.pressing {
   transform: translateY(1px);
 }
 

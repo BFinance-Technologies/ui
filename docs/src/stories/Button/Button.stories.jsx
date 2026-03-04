@@ -45,7 +45,7 @@ export const Primary = {
       size="md" 
       leftIcon={<ScanLine/>} 
       rightIcon={<ArrowRightLine/>}
-      badge={<Badge size="md" color="white">16</Badge>}
+      badge={{value: 16}}
     >
       {args.children}
     </Button>
@@ -165,11 +165,23 @@ export const WithIcons = {
 
 export const WithBadge = {
   render: (args) => (
-    <Button variant="secondary" {...args} badge={<Badge size="md" color="white" stroke>16</Badge>}>With badge</Button>
+    <>
+      <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginBottom: 20 }}>
+        <Button variant="primary" {...args}  leftIcon={<ScanLine/>} rightIcon={<ArrowRightLine/>} badge={args.badge}>With badge</Button>
+        <Button variant="secondary" {...args} badge={args.badge}>With badge</Button>
+        <Button variant="tertiary" {...args}  badge={args.badge}>With badge</Button>
+        <Button variant="ghost" {...args}  badge={args.badge}>With badge</Button>  
+      </div>
+      <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+        <Button variant="primary" mode="destructive" {...args} leftIcon={<ScanLine/>} rightIcon={<ArrowRightLine/>} badge={args.badge}>With badge</Button>
+        <Button variant="secondary" mode="destructive" {...args} badge={args.badge}>With badge</Button>
+        <Button variant="tertiary" mode="destructive" {...args} badge={args.badge}>With badge</Button>
+        <Button variant="ghost" mode="destructive" {...args} badge={args.badge}>With badge</Button>
+      </div>
+    </>
   ),
   args: {
-    size: 'md',
-    shape: 'rounded',
+    badge: { value: 16, leftIcon: <ScanLine/>, rightIcon: <ArrowRightLine/> },
   },
 };
 
