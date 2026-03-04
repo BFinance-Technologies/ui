@@ -29,7 +29,8 @@
   box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
 }
  
-.button:not(.disabled):active {
+.button:not(.disabled):active,
+.button.pressing {
   transform: translateY(1px);
 }
 
@@ -41,7 +42,7 @@
   color: var(--text-color-white);
 }
 
-.primary svg {
+.primary .icon svg {
   fill: #FFF;
 }
 
@@ -50,7 +51,7 @@
   color: rgba(0, 0, 0, 0.25);
 }
 
-.primary.disabled svg {
+.primary.disabled .icon svg {
   fill: rgba(0, 0, 0, 0.25);
 }
 
@@ -67,7 +68,7 @@
   border: 1px solid #DEE0E3;
 }
 
-.secondary svg {
+.secondary .icon svg {
   fill: #14151A;
 }
 
@@ -84,7 +85,7 @@
   border-color: #E9EAEC;
 }
 
-.secondary.disabled svg {
+.secondary.disabled .icon svg {
   fill: rgba(0, 0, 0, 0.25);
 }
 
@@ -94,7 +95,7 @@
   color: var(--text-color);
 }
 
-.tertiary svg {
+.tertiary .icon svg {
   fill: #14151A;
 }
 
@@ -103,7 +104,7 @@
   color: rgba(0, 0, 0, 0.25);
 }
 
-.tertiary.disabled svg {
+.tertiary.disabled .icon svg {
   fill: rgba(0, 0, 0, 0.25);
 }
 
@@ -119,7 +120,7 @@
   color: var(--text-color);
 }
 
-.ghost svg {
+.ghost .icon svg {
   fill: #14151A;
 }
 
@@ -134,7 +135,7 @@
   background: transparent;
 }
 
-.ghost.disabled svg {
+.ghost.disabled .icon svg {
   fill: rgba(0,0,0,0.25);
 }
 
@@ -145,7 +146,7 @@
   color: #FFF;
 }
 
-.primary.destructive:not(.disabled) svg {
+.primary.destructive:not(.disabled) .icon svg {
   fill: #FFF;
 }
 
@@ -154,7 +155,7 @@
   color: rgba(230,72,61,0.30);;
 }
 
-.primary.destructive.disabled svg {
+.primary.destructive.disabled .icon svg {
   fill: rgba(230,72,61,0.30);
 }
 
@@ -182,7 +183,7 @@
   background: #FFF;
 }
 
-.secondary.destructive svg {
+.secondary.destructive .icon svg {
   fill: #E6483D;
 }
 
@@ -192,7 +193,7 @@
   background: #FFF;
 }
 
-.secondary.destructive.disabled svg {
+.secondary.destructive.disabled .icon svg {
   fill: rgba(230, 72, 61, 0.30);
 }
 
@@ -221,7 +222,7 @@
   background: rgba(230,72,61,0.10);
 }
 
-.tertiary.destructive svg {
+.tertiary.destructive .icon svg {
   fill: #E6483D;
 }
 
@@ -230,7 +231,7 @@
   background: rgba(230,72,61,0.10);
 }
 
-.tertiary.destructive.disabled svg {
+.tertiary.destructive.disabled .icon svg {
   fill: rgba(230,72,61,0.30);
 }
 
@@ -259,7 +260,7 @@
   color: #E6483D;
 }
 
-.ghost.destructive svg {
+.ghost.destructive .icon svg {
   fill: #E6483D;
 }
 
@@ -268,7 +269,7 @@
   color: rgba(230,72,61,0.30);
 }
 
-.ghost.destructive.disabled svg {
+.ghost.destructive.disabled .icon svg {
   fill: rgba(230,72,61,0.30);
 }
 
