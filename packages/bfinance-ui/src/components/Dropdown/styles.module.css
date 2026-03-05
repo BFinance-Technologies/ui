@@ -49,7 +49,6 @@
   position: absolute;
   top: calc(100% + 4px);
   left: 0;
-  min-width: 100%;
   background: #FFF;
   border: 1px solid #DEE0E3;
   border-radius: 12px;
@@ -59,17 +58,45 @@
   overflow-y: auto;
 }
 
+.menuDownLeft {
+  top: calc(100% + 4px);
+  left: 0;
+}
+
+.menuDownRight {
+  top: calc(100% + 4px);
+  right: 0;
+  left: auto;
+}
+
+.menuUpLeft {
+  bottom: calc(100% + 4px);
+  top: auto;
+  left: 0;
+}
+
+.menuUpRight {
+  bottom: calc(100% + 4px);
+  top: auto;
+  right: 0;
+  left: auto;
+}
+
 .dropdownItem {
-  padding: 8px 12px;
+  padding: 10px 8px;
   cursor: pointer;
   color: #14151A;
   font-family: "Helvetica Neue";
   font-size: 14px;
   font-weight: 400;
+  margin: 5px;
 }
 
 .dropdownItem:hover {
+  padding: 10px 8px;
   background-color: rgba(222, 224, 227, 0.3);
+  border-radius: 6px;
+
 }
 
 .dropdownMenu::-webkit-scrollbar {

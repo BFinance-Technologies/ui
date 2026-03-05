@@ -1,61 +1,51 @@
 import React, { useState } from 'react'
 import styles from './styles.module.css'
 import Badge from '../Badge/Badge'
-
-const BADGE_COLOR_BY_MODE = {
-  primary:   { default: 'white', destructive: 'white-destructive' },
-  secondary: { default: 'gray',  destructive: 'white-destructive' },
-  tertiary:  { default: 'white',  destructive: 'white-destructive' },
-  ghost:     { default: 'gray',  destructive: 'white-destructive' },
-}
-
-const Button = ({
+const LinkButton = ({
+  
   children,
-  onClick,
-  type = 'button',
-  variant = 'primary', // primary, secondary, tertiary, ghost
-  size = 'md', // lg, md, sm, xs
-  shape = 'rounded', // rounded, pill
+  href = '#',
+  size = 'md',  // md, sm
   mode = 'default', // default, destructive
-  badge, // { value: number | string, leftIcon?: ReactNode, rightIcon?: ReactNode }
   leftIcon,
   rightIcon,
   className,
+  badge, // {leftIcon?: ReactNode, rightIcon?: ReactNode, value: number | string},
   disabled = false,
   ...props
 }) => {
   const [isPressed, setIsPressed] = useState(false)
 
+  const badgeColorByMode = { default: 'gray', destructive: 'red' }
+
   const buttonClasses = [
-    styles.button,  
-    styles[variant],
+    styles.button,
     styles[size],
-    styles[shape],
     styles[mode],
     disabled && styles.disabled,
     isPressed && styles.pressing,
     className
   ].filter(Boolean).join(' ')
 
-  const handleKeyDown = (e) => {
+  function handleKeyDown(e) {
     if (disabled) return
     if (e.key === ' ' || e.key === 'Enter') {
-      e.preventDefault()
       setIsPressed(true)
-      onClick?.()
+      if (e.key === ' ') {
+        e.preventDefault()
+        e.currentTarget.click()
+      }
     }
   }
 
-  const handleKeyUp = (e) => {
+  function handleKeyUp(e) {
     if (e.key === ' ' || e.key === 'Enter') setIsPressed(false)
   }
 
   return (
-    <button
-      type={type}
+    <a
+      href={disabled ? undefined : href}
       className={buttonClasses}
-      onClick={onClick}
-      disabled={disabled}
       onKeyDown={handleKeyDown}
       onKeyUp={handleKeyUp}
       aria-disabled={disabled}
@@ -66,9 +56,8 @@ const Button = ({
       {children && <span className={styles.text}>{children}</span>}
       {badge && (
         <Badge
+          color={badgeColorByMode[mode]}
           size={size}
-          stroke
-          color={BADGE_COLOR_BY_MODE[variant]?.[mode]}
           leftIcon={badge.leftIcon}
           rightIcon={badge.rightIcon}
           disabled={disabled}
@@ -77,8 +66,9 @@ const Button = ({
         </Badge>
       )}
       {rightIcon && <span className={styles.icon}>{rightIcon}</span>}
-    </button>
+    </a>
   )
 }
 
-export default Button
+export default LinkButton
+

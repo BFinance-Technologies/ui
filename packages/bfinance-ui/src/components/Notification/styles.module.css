@@ -1,0 +1,127 @@
+.notification {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 400px;
+  background: var(--background-color-white);
+  border: 1px solid var(--border-gray-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(20, 21, 26, 0.02);
+  padding: 16px;
+  font-family: var(--font-Inter);
+  z-index: 9999;
+  animation: slideIn 0.22s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ── Header row ────────────────────────────────────── */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.titleGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.titleGroup_sm {
+  gap: 8px;
+}
+
+.statusIcon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statusIcon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.icon_info svg       { fill: #4778F5; }
+.icon_success svg    { fill: #26BD6C; }
+.icon_warning svg    { fill: #F48E2F; }
+.icon_destructive svg { fill: #E6483D; }
+
+.title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #141514;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Close button ──────────────────────────────────── */
+
+.closeButton {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: rgba(0, 0, 0, 0.60);
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s, background 0.15s;
+}
+
+.closeButton svg {
+  width: 20px;
+  height: 20px;
+  fill: rgba(0, 0, 0, 0.60);
+}
+
+.closeButton:hover svg {
+  fill: #141514;
+}
+
+/* ── Description ───────────────────────────────────── */
+
+.description {
+  margin: 4px 0 0 32px;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.60);
+  line-height: 20px;
+  letter-spacing: -0.1px;
+}
+
+/* ── Actions ───────────────────────────────────────── */
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  margin-left: 32px;
+}
+
+/* ── Size: sm ──────────────────────────────────────── */
+
+.sm {
+  padding: 12px;
+}
+
