@@ -5,9 +5,7 @@
   width: 400px;
   background: var(--background-color-white);
   border: 1px solid var(--border-gray-color);
-  border-radius: 12px;
   box-shadow: 0 4px 20px rgba(20, 21, 26, 0.02);
-  padding: 16px;
   font-family: var(--font-Inter);
   z-index: 9999;
   animation: slideIn 0.22s ease;
@@ -66,7 +64,6 @@
   font-size: 16px;
   font-weight: 500;
   color: #141514;
-  line-height: 24px;
   letter-spacing: -0.2px;
   white-space: nowrap;
   overflow: hidden;
@@ -98,6 +95,11 @@
   fill: #141514;
 }
 
+.closeButton:focus-visible {  
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+}
+
 /* ── Description ───────────────────────────────────── */
 
 .description {
@@ -121,7 +123,13 @@
 
 /* ── Size: sm ──────────────────────────────────────── */
 
+.md {
+  padding: 16px;
+  border-radius: 20px;
+}
+
 .sm {
   padding: 12px;
+  border-radius: 14px;
 }
 
