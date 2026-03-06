@@ -114,6 +114,12 @@
   line-height: 1;
 }
 
+.clearButton svg {
+  width: 16px;
+  height: 16px;
+  fill: rgba(0, 0, 0, 0.60);
+}
+
 .footer {
   display: flex;
   align-items: flex-start;
