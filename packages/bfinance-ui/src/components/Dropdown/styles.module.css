@@ -13,17 +13,14 @@
   border: 1px solid #DEE0E3;
   background: #FFF;
   cursor: pointer;
+  overflow: hidden;
 }
 
-.dropdownTitle {
-  color: var(--text-color);
-  text-align: center;
-  font-family: var(--font-Inter);
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 20px;
-  letter-spacing: -0.1px;
+.buttonLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
+  min-width: 0;
 }
 
 .dropdownIcon {
@@ -44,7 +41,7 @@
 .rotated {
   transform: rotate(180deg);
 }
-
+/* ── Dropdown Menu ────────────────────────────────────*/
 .dropdownMenu {
   position: absolute;
   top: calc(100% + 4px);
@@ -55,33 +52,20 @@
   box-shadow: 0px 4px 12px rgba(16, 24, 40, 0.1);
   z-index: 99999;
   max-height: 220px;
+  overflow-x: hidden;
   overflow-y: auto;
 }
 
-.menuDownLeft {
+.menuDown {
   top: calc(100% + 4px);
-  left: 0;
 }
 
-.menuDownRight {
-  top: calc(100% + 4px);
-  right: 0;
-  left: auto;
-}
-
-.menuUpLeft {
+.menuUp {
   bottom: calc(100% + 4px);
   top: auto;
-  left: 0;
 }
 
-.menuUpRight {
-  bottom: calc(100% + 4px);
-  top: auto;
-  right: 0;
-  left: auto;
-}
-
+/* ── Dropdown Item ────────────────────────────────────*/
 .dropdownItem {
   padding: 10px 8px;
   cursor: pointer;
@@ -90,15 +74,43 @@
   font-size: 14px;
   font-weight: 400;
   margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border-radius: 6px;
 }
 
 .dropdownItem:hover {
-  padding: 10px 8px;
   background-color: rgba(222, 224, 227, 0.3);
-  border-radius: 6px;
-
 }
 
+.dropdownItemLabel {
+  display: block;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.dropdownItemSelected {
+  background-color: rgba(222, 224, 227, 0.3);
+}
+
+.dropdownItemFocused {
+  background-color: rgba(222, 224, 227, 0.3);
+  outline: none;
+}
+
+.dropdownItemCheckmark {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: #14151A;
+}
+
+/* ── Dropdown Menu Scrollbar ────────────────────────────────────*/
 .dropdownMenu::-webkit-scrollbar {
   width: 4px;
 }
@@ -111,3 +123,4 @@
   background-color: #DEE0E3;
   border-radius: 4px;
 }
+
