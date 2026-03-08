@@ -63,18 +63,22 @@ const Button = ({
       {...props}
     >
       {leftIcon && <span className={styles.icon}>{leftIcon}</span>}
-      {children && <span className={styles.text}>{children}</span>}
-      {badge && (
-        <Badge
-          size={size}
-          stroke
-          color={BADGE_COLOR_BY_MODE[variant]?.[mode]}
-          leftIcon={badge.leftIcon}
-          rightIcon={badge.rightIcon}
-          disabled={disabled}
-        >
-          {badge.value}
-        </Badge>
+      {(children || badge) && (
+        <span className={styles.content}>
+          {children && <span className={styles.text}>{children}</span>}
+          {badge && (
+            <Badge
+              size={size}
+              stroke
+              color={BADGE_COLOR_BY_MODE[variant]?.[mode]}
+              leftIcon={badge.leftIcon}
+              rightIcon={badge.rightIcon}
+              disabled={disabled}
+            >
+              {badge.value}
+            </Badge>
+          )}
+        </span>
       )}
       {rightIcon && <span className={styles.icon}>{rightIcon}</span>}
     </button>

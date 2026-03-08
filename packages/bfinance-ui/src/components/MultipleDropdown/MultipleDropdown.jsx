@@ -1,12 +1,13 @@
-import React, { useState, useRef, useCallback } from 'react';
-import { CheckLine, ArrowDownSLine } from '@bfinance/icons';
+import React, { useState, useCallback } from 'react';
+import { ArrowDownSLine } from '@bfinance/icons';
 
 import { Button } from '../Button';
+import { Checkbox } from '../Checkbox';
 import useDropdown from '../../hooks/useDropdown';
 
 import styles from './styles.module.css';
 
-const Dropdown = ({
+const MultipleDropdown = ({
   title = 'Select',
   options = [], // [{ label: string, value: string }]
   onSelect,
@@ -15,10 +16,19 @@ const Dropdown = ({
   width = '200px',
   menuWidth,
 }) => {
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedValues, setSelectedValues] = useState([]);
 
-  // useRef чтобы передать в хук стабильную ссылку до определения handleOptionClick
-  const onKeySelectRef = useRef(null);
+  // useCallback чтобы передать в хук стабильную ссылку до определения toggleOption
+  const toggleOption = useCallback((option) => {
+    setSelectedValues(prev => {
+      const isSelected = prev.includes(option.value);
+      const next = isSelected
+        ? prev.filter(value => value !== option.value)
+        : [...prev, option.value];
+      onSelect?.(next.map(value => options.find(option => option.value === value)));
+      return next;
+    });
+  }, [options, onSelect]);
 
   const {
     isOpen,
@@ -38,24 +48,14 @@ const Dropdown = ({
     width,
     menuWidth,
     onOpen,
-    onKeySelect: useCallback((option) => onKeySelectRef.current?.(option), []),
+    onKeySelect: toggleOption,
   });
 
-  const handleOptionClick = useCallback((option) => {
-    setSelectedOption(option);
-    closeDropdown();
-    onSelect?.(option);
-  }, [closeDropdown, onSelect]);
-
-  onKeySelectRef.current = handleOptionClick;
+  const hasSelection = selectedValues.length > 0;
 
   const toggleDropdown = () => {
-    if (isOpen) {
-      closeDropdown();
-    } else {
-      const selectedIdx = options.findIndex(opt => opt.value === selectedOption?.value);
-      openDropdown(selectedIdx >= 0 ? selectedIdx : 0);
-    }
+    if (isOpen) closeDropdown();
+    else openDropdown(0);
   };
 
   return (
@@ -66,7 +66,7 @@ const Dropdown = ({
     >
       <Button
         ref={buttonRef}
-        variant="secondary"
+        variant={hasSelection ? 'primary' : 'secondary'}
         size="md"
         shape="rounded"
         rightIcon={
@@ -74,42 +74,45 @@ const Dropdown = ({
             <ArrowDownSLine />
           </span>
         }
+        badge={hasSelection ? { value: selectedValues.length } : undefined}
         className={styles.dropdownToggle}
         style={buttonStyle}
         onClick={toggleDropdown}
         aria-haspopup="listbox"
         aria-expanded={isOpen}
+        aria-multiselectable="true"
       >
-        <span className={styles.buttonLabel}>
-          {selectedOption ? selectedOption.label : title}
-        </span>
+        <span className={styles.buttonLabel}>{title}</span>
       </Button>
 
       {isOpen && (
         <div
           role="listbox"
-          aria-activedescendant={focusedIndex >= 0 ? `option-${options[focusedIndex]?.value}` : undefined}
+          aria-multiselectable="true"
           className={`${styles.dropdownMenu} ${styles[menuPosClass]}`}
           style={menuStyle}
         >
           {options.map((option, index) => {
-            const isSelected = selectedOption?.value === option.value;
+            const isSelected = selectedValues.includes(option.value);
             const isFocused = focusedIndex === index;
             return (
               <div
                 key={option.value}
                 role="option"
                 aria-selected={isSelected}
-                className={`${styles.dropdownItem} ${isSelected ? styles.dropdownItemSelected : ''} ${isFocused ? styles.dropdownItemFocused : ''}`}
-                onClick={() => handleOptionClick(option)}
+                className={`${styles.dropdownItem} ${isFocused ? styles.dropdownItemFocused : ''}`}
+                onClick={() => toggleOption(option)}
                 onMouseEnter={() => setFocusedIndex(index)}
               >
+                <div onClick={e => e.stopPropagation()}>
+                  <Checkbox
+                    key={`${option.value}-${isSelected}`}
+                    isChecked={isSelected}
+                    size="sm"
+                    onChange={() => toggleOption(option)}
+                  />
+                </div>
                 <span className={styles.dropdownItemLabel}>{option.label}</span>
-                {isSelected && (
-                  <span className={styles.dropdownItemCheckmark}>
-                    <CheckLine />
-                  </span>
-                )}
               </div>
             );
           })}
@@ -119,4 +122,4 @@ const Dropdown = ({
   );
 };
 
-export default Dropdown;
+export default MultipleDropdown;

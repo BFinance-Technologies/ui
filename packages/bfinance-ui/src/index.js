@@ -7,6 +7,7 @@ export * from "./components/IconButton";
 export * from "./components/Input";
 export * from "./components/LinkButton";
 export * from "./components/Modal";
+export * from "./components/MultipleDropdown";
 export * from "./components/Notification";
 export * from "./components/Tooltip";
 export * from "./components/Toggle";
