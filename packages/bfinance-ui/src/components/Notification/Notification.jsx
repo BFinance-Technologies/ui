@@ -44,37 +44,37 @@ const Notification = ({
 
   return (
     <div className={notificationClasses} role="alert" {...props}>
-      <div className={styles.header}>
-        <div className={[styles.titleGroup, styles[`titleGroup_${size}`]].filter(Boolean).join(' ')}>
-          <span className={[styles.statusIcon, styles[`icon_${status}`]].filter(Boolean).join(' ')}>
-            <InformationFill />
-          </span>
-          <span className={styles.title}>{title}</span>
-        </div>
-        <button className={styles.closeButton} onClick={handleClose} aria-label="Close notification">
-          <CloseLine />
-        </button>
+      <span className={[styles.statusIcon, styles[`icon_${status}`]].filter(Boolean).join(' ')}>
+        <InformationFill />
+      </span>
+
+      <div className={styles.body}>
+        <span className={styles.title}>{title}</span>
+
+        {size === 'md' && description && (
+          <p className={styles.description}>{description}</p>
+        )}
+
+        {size === 'md' && actions && actions.length > 0 && (
+          <div className={styles.actions}>
+            {actions.map((action, i) => (
+              <Button
+                size="xs"
+                shape="rounded"
+                key={i}
+                variant={action.variant}
+                onClick={action.onClick}
+              >
+                {action.label}
+              </Button>
+            ))}
+          </div>
+        )}
       </div>
 
-      {size === 'md' && description && (
-        <p className={styles.description}>{description}</p>
-      )}
-
-      {size === 'md' && actions && actions.length > 0 && (
-        <div className={styles.actions}>
-          {actions.map((action, i) => (
-            <Button
-              size="xs"
-              shape="rounded"
-              key={i}
-              variant={action.variant}
-              onClick={action.onClick}
-            >
-              {action.label}
-            </Button>
-          ))}
-        </div>
-      )}
+      <button className={styles.closeButton} onClick={handleClose} aria-label="Close notification">
+        <CloseLine />
+      </button>
     </div>
   );
 };

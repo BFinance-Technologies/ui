@@ -371,4 +371,6 @@
 .text {
   display: inline-flex;
   align-items: center;
+  min-width: 0;
+  overflow: hidden;
 }
