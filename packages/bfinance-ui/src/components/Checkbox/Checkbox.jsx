@@ -1,17 +1,7 @@
 import React, { useState } from 'react';
+import { CheckLine, MinusLine } from '@bfinance/icons'; 
+
 import styles from './styles.module.css';
-
-const CheckLine = () => (
-  <svg width="10" height="8" viewBox="0 0 17 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M6.364 9.193L15.556 0L16.971 1.414L6.364 12.021L0 5.657L1.414 4.243L6.364 9.193Z" fill="#fff" stroke="#fff" stroke-width={1.5}/>
-  </svg>
-);
-
-const MinusLine = () => (
-  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M5 11H19V13H5V11Z" fill="#fff" stroke="#fff" stroke-width={1.5}/>
-  </svg>
-);
 
 const Checkbox = ({
   isChecked = false,
