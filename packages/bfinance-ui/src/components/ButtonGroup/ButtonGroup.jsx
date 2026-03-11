@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Badge } from '@bf/bfinance-ui'
+import Badge from '../Badge/Badge'
 import styles from './styles.module.css'
 
 /*
