@@ -29,7 +29,6 @@
   justify-content: center;
   transition: all 0.2s ease;
   flex-shrink: 0;
-  margin-top: 2px;
 }
 
 .checkboxCustom.checked {
@@ -65,7 +64,7 @@
   color: rgba(0, 0, 0, 0.60);
 }
 
-/* Sizes */
+/* ── Sizes ────────────────────────────────────*/
 .sm .checkboxCustom {
   width: 16px;
   height: 16px;
@@ -98,4 +97,16 @@
   font-size: 16px;
   line-height: 24px;
   letter-spacing: -0.2px;
+}
+
+/* ── Icon ────────────────────────────────────*/
+.checkboxCustom svg {
+  width: 12px;
+  height: 12px;
+}
+
+.checkboxCustom.checked svg {
+  fill: #FFFFFF;
+  stroke-width: 1.5px;
+  stroke: #FFFFFF;
 }

@@ -35,7 +35,7 @@ export default {
 export const SizeVariants = () => {
   const sizes = ['sm', 'md', 'lg'];
   return (
-    <div style={{ display: 'flex', gap: 24, alignItems: 'center', justifyContent: 'center', gap: '100px' }}>
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '100px' }}>
       {sizes.map((s) => (
         <div key={s} style={{ display: 'flex', flexDirection: 'column', gap: 8, alignItems: 'center' }}>
           <Tooltip size={s} tip="topCenter" text={s === 'lg' ? 'Long description for large tooltip' : 'Tooltip text' } headline={s === 'lg' ? 'Tooltip headline' : ''}>
@@ -53,15 +53,16 @@ export const TipPositions = () => {
     'topLeft',
     'topCenter',
     'topRight',
+    'leftSide',
+    'rightSide',
     'bottomLeft',
     'bottomCenter',
     'bottomRight',
-    'leftSide',
-    'rightSide',
+ 
   ];
 
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 20 }}>
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 30 }}>
       {tips.map((t) => (
         <div key={t} style={{ display: 'flex', flexDirection: 'column', gap: 8, alignItems: 'center', width: 240 }}>
           <Tooltip tip={t} size="md" text={`Tip: ${t}`} >

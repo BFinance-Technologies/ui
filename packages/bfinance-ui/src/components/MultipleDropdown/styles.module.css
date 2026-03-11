@@ -10,10 +10,13 @@
   align-items: center;
   gap: 6px;
   border-radius: 12px;
-  border: 1px solid #DEE0E3;
-  background: #FFF;
   cursor: pointer;
   overflow: hidden;
+  font-family: var(--font-Inter);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
 }
 
 .buttonLabel {
@@ -21,11 +24,6 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   min-width: 0;
-  font-family: var(--font-Inter);
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: -0.1px;
 }
 
 .dropdownIcon {
@@ -35,21 +33,15 @@
   align-items: center;
   justify-content: center;
   transition: transform 0.2s ease;
-  color: var(--text-color);
-}
-
-.dropdownIcon img {
-  width: 100%;
-  height: 100%;
 }
 
 .rotated {
   transform: rotate(180deg);
 }
+
 /* ── Dropdown Menu ────────────────────────────────────*/
 .dropdownMenu {
   position: absolute;
-  top: calc(100% + 4px);
   left: 0;
   background: #FFF;
   border: 1px solid #DEE0E3;
@@ -81,13 +73,17 @@
   margin: 5px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 8px;
   border-radius: 6px;
 }
 
 .dropdownItem:hover {
   background-color: rgba(222, 224, 227, 0.3);
+}
+
+.dropdownItemFocused {
+  background-color: rgba(222, 224, 227, 0.3);
+  outline: none;
 }
 
 .dropdownItemLabel {
@@ -104,23 +100,7 @@
   letter-spacing: -0.1px;
 }
 
-.dropdownItemSelected {
-  background-color: rgba(222, 224, 227, 0.3);
-}
-
-.dropdownItemFocused {
-  background-color: rgba(222, 224, 227, 0.3);
-  outline: none;
-}
-
-.dropdownItemCheckmark {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  color: #14151A;
-}
-
-/* ── Dropdown Menu Scrollbar ────────────────────────────────────*/
+/* ── Scrollbar ────────────────────────────────────*/
 .dropdownMenu::-webkit-scrollbar {
   width: 4px;
 }
@@ -133,4 +113,3 @@
   background-color: #DEE0E3;
   border-radius: 4px;
 }
-

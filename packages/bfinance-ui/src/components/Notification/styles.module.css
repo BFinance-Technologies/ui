@@ -3,11 +3,13 @@
   top: 16px;
   right: 16px;
   width: 400px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
   background: var(--background-color-white);
   border: 1px solid var(--border-gray-color);
-  border-radius: 12px;
   box-shadow: 0 4px 20px rgba(20, 21, 26, 0.02);
-  padding: 16px;
   font-family: var(--font-Inter);
   z-index: 9999;
   animation: slideIn 0.22s ease;
@@ -24,25 +26,13 @@
   }
 }
 
-/* ── Header row ────────────────────────────────────── */
+/* ── Body (middle column) ───────────────────────────── */
 
-.header {
+.body {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.titleGroup {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  flex-direction: column;
   flex: 1;
   min-width: 0;
-}
-
-.titleGroup_sm {
-  gap: 8px;
 }
 
 .statusIcon {
@@ -66,7 +56,6 @@
   font-size: 16px;
   font-weight: 500;
   color: #141514;
-  line-height: 24px;
   letter-spacing: -0.2px;
   white-space: nowrap;
   overflow: hidden;
@@ -98,10 +87,15 @@
   fill: #141514;
 }
 
+.closeButton:focus-visible {  
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+}
+
 /* ── Description ───────────────────────────────────── */
 
 .description {
-  margin: 4px 0 0 32px;
+  margin: 4px 0 0;
   font-size: 14px;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.60);
@@ -116,12 +110,17 @@
   align-items: center;
   gap: 8px;
   margin-top: 14px;
-  margin-left: 32px;
 }
 
 /* ── Size: sm ──────────────────────────────────────── */
 
+.md {
+  padding: 16px;
+  border-radius: 20px;
+}
+
 .sm {
   padding: 12px;
+  border-radius: 14px;
 }
 

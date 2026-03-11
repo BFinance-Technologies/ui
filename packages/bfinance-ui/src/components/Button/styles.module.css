@@ -367,8 +367,19 @@
   height: 14px;
 }
 
+/* ── Content (text + badge group) ────────────────────────────────────*/
+.content {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  flex: 1;
+}
+
 /* ── Text ────────────────────────────────────*/
 .text {
   display: inline-flex;
   align-items: center;
+  min-width: 0;
+  overflow: hidden;
 }
