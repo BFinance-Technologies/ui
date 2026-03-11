@@ -26,11 +26,11 @@ export default {
 export const Default = {
   render: (args) => (
     <div style={{ display: 'flex', gap: 16, flexDirection: 'column', alignItems: 'flex-start' }}>
-      <span>Down</span>
+      <span style={{ fontFamily: 'var(--font-Inter)', fontWeight: 500, fontSize: '14px', lineHeight: '20px', letterSpacing: '-0.1px' }}>Down</span>
       <div style={{ display: 'flex', gap: 16, alignItems: 'center', marginBottom: '160px' }}>
         <MultipleDropdown {...args} position="down" />
       </div>
-      <span>Up</span>
+      <span style={{ fontFamily: 'var(--font-Inter)', fontWeight: 500, fontSize: '14px', lineHeight: '20px', letterSpacing: '-0.1px' }}>Up</span>
       <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
         <MultipleDropdown {...args} position="up" />
       </div>

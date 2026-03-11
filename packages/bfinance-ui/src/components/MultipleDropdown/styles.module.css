@@ -12,6 +12,11 @@
   border-radius: 12px;
   cursor: pointer;
   overflow: hidden;
+  font-family: var(--font-Inter);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
 }
 
 .buttonLabel {
@@ -88,6 +93,11 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   min-width: 0;
+  font-family: var(--font-Inter);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
 }
 
 /* ── Scrollbar ────────────────────────────────────*/
