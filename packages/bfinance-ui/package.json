@@ -1,7 +1,6 @@
 {
-  "name": "@bf/bfinance-ui",
-  "private": true,
-  "version": "1.0.0",
+  "name": "@bfinance/ui",
+  "version": "1.1.0",
   "description": "BFinance React UI component library",
   "type": "module",
   "main": "./dist/index.cjs",
