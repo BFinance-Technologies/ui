@@ -1,6 +1,7 @@
 {
-  "name": "@bfinance/ui",
+  "name": "@bfinance/monorepo",
   "version": "1.0.0",
+  "private": true,
   "type": "module",
   "workspaces": [
     "docs",
@@ -9,6 +10,7 @@
   "scripts": {
     "storybook": "npm -w docs run storybook",
     "build-storybook": "npm -w docs run build-storybook",
-    "build:ui": "npm -w packages/bfinance-ui run build"
+    "build:ui": "npm -w packages/bfinance-ui run build",
+    "publish:ui": "npm -w packages/bfinance-ui publish"
   }
 }
