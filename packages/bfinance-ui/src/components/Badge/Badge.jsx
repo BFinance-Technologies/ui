@@ -26,11 +26,11 @@ const Badge = ({
     .join(' '); 
 
   return (
-    <span className={classes} {...props}>
-      {leftIcon && <span className={styles.icon}>{leftIcon}</span>}
+    <div className={classes} {...props}>
+      {leftIcon && <div className={styles.icon}>{leftIcon}</div>}
       {children}
-      {rightIcon && <span className={styles.icon}>{rightIcon}</span>}
-    </span>
+      {rightIcon && <div className={styles.icon}>{rightIcon}</div>}
+    </div>
   );
 };
 
