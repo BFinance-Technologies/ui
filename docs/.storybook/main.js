@@ -16,7 +16,7 @@ export default {
     config.resolve = config.resolve || {};
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
-      "@bf/bfinance-ui": path.resolve(__dirname, "../../packages/bfinance-ui/src/index.js"),
+      "@bfinance/ui": path.resolve(__dirname, "../../packages/bfinance-ui/src/index.js"),
     };
     config.resolve.dedupe = ["react", "react-dom"];
     return config;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Toggle } from '@bf/bfinance-ui';
+import { Toggle } from '@bfinance/ui';
 
 export default {
   title: 'Components/Toggle',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dropdown } from '@bf/bfinance-ui';
+import { Dropdown } from '@bfinance/ui';
 
 export default {
   title: 'Components/Dropdown',

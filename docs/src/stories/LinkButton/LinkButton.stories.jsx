@@ -1,5 +1,5 @@
 import React from 'react'
-import { LinkButton, Badge } from '@bf/bfinance-ui'
+import { LinkButton, Badge } from '@bfinance/ui'
 import { ScanLine, ArrowRightLine } from '@bfinance/icons'
 
 export default {
