@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@bfinance/icons': '@bfinance/icons/dist/index.js',
+      '@bfinance/icons': '@bfinance/icons/dist/index.mjs',
     },
   },
   build: {
