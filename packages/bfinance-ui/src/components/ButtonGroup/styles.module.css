@@ -101,9 +101,8 @@
 }
 
 /* ── Active press ────────────────────────────────────*/
-.btn:not(.disabled):active,
-.btn.pressing {
-  transform: translateY(1px);
+.btn:not(.disabled):active {
+  background: #F7F7F8;
 }
 
 /* ── Sizes ────────────────────────────────────*/

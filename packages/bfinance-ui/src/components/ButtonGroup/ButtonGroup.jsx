@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Badge from '../Badge/Badge'
 import styles from './styles.module.css'
 
@@ -19,7 +19,6 @@ const ButtonGroup = ({
   className,
   ...props
 }) => {
-  const [pressedIndex, setPressedIndex] = useState(null)
   const groupClasses = [styles.buttonGroup, className].filter(Boolean).join(' ')
 
   return (
@@ -30,21 +29,7 @@ const ButtonGroup = ({
           styles[size],
           styles[shape],
           item.disabled && styles.disabled,
-          pressedIndex === index && styles.pressing,
         ].filter(Boolean).join(' ')
-
-        const handleKeyDown = (e) => {
-          if (item.disabled) return
-          if (e.key === ' ' || e.key === 'Enter') {
-            e.preventDefault()
-            setPressedIndex(index)
-            item.onClick?.()
-          }
-        }
-
-        const handleKeyUp = (e) => {
-          if (e.key === ' ' || e.key === 'Enter') setPressedIndex(null)
-        }
 
         return (
           <button
@@ -53,8 +38,6 @@ const ButtonGroup = ({
             className={btnClasses}
             onClick={item.onClick}
             disabled={item.disabled}
-            onKeyDown={handleKeyDown}
-            onKeyUp={handleKeyUp}
           >
             {item.leftIcon && <span className={styles.icon}>{item.leftIcon}</span>}
             {item.label && <span className={styles.text}>{item.label}</span>}
