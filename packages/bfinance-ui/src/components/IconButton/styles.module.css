@@ -20,11 +20,6 @@
   box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
 }
 
-.button:not(.disabled):active,
-.button.pressing {
-  transform: translateY(1px);
-}
-
 /* ── Variants ────────────────────────────────────*/
 
 /* ── Primary ────────────────────────────────────*/
@@ -52,6 +47,10 @@
   }
 }
 
+.primary:not(.disabled):active {
+  background: #1F2228;
+}
+
 /* ── Secondary ────────────────────────────────────*/
 .secondary {
   background: var(--background-color-white);
@@ -68,6 +67,11 @@
     border-color: var(--border-gray-hover-color);
     background: var(--background-color);
   }
+}
+
+.secondary:not(.disabled):active {
+  border-color: var(--border-gray-hover-color);
+  background: var(--background-color);
 }
 
 .secondary.disabled {
@@ -105,6 +109,10 @@
   }
 }
 
+.tertiary:not(.disabled):active {
+  background: rgba(10, 15, 41, 0.08);
+}
+
 /* ── Ghost ────────────────────────────────────*/
 .ghost {
   background: transparent;
@@ -119,6 +127,10 @@
   .ghost:not(.disabled):hover {
     background: rgba(10, 15, 41, 0.04);
   }
+}
+
+.ghost:not(.disabled):active {
+  background: rgba(10, 15, 41, 0.04);
 }
 
 .ghost.disabled {
@@ -157,9 +169,8 @@
   }
 }
 
-.primary.destructive:not(.disabled):focus {
-  border-color: #F08B85;
-  box-shadow: 0 0 0 2px rgba(230,72,61,0.04);
+.primary.destructive:not(.disabled):active {
+  background: #D9281C;
 }
 
 .primary.destructive:not(.disabled):focus-visible {
@@ -197,9 +208,10 @@
   }
 }
 
-.secondary.destructive:not(.disabled):focus {
-  border-color: #F08B85;
-  box-shadow: 0 0 0 2px rgba(230,72,61,0.04);
+.secondary.destructive:not(.disabled):active {
+  color: #E6483D;
+  border-color: #F5B2AD;
+  background: #FDF2F1;
 }
 
 .secondary.destructive:not(.disabled):focus-visible {
@@ -233,9 +245,8 @@
   }
 }
 
-.tertiary.destructive:not(.disabled):focus {
-  box-shadow: 0 0 0 2px rgba(230,72,61,0.06);
-  border-color: #F08B85;
+.tertiary.destructive:not(.disabled):active {
+  background: rgba(230,72,61,0.15);
 }
 
 .tertiary.destructive:not(.disabled):focus-visible {
@@ -269,9 +280,8 @@
   }
 }
 
-.ghost.destructive:not(.disabled):focus {
-  border-color: #F08B85;
-  box-shadow: 0 0 0 2px rgba(230,72,61,0.04);
+.ghost.destructive:not(.disabled):active {
+  background: rgba(230,72,61,0.10);
 }
 
 .ghost.destructive:not(.disabled):focus-visible {

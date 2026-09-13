@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './styles.module.css'
 import Badge from '../Badge/Badge'
 
@@ -24,31 +24,15 @@ const Button = ({
   disabled = false,
   ...props
 }) => {
-  const [isPressed, setIsPressed] = useState(false)
-
   const buttonClasses = [
-    styles.button,  
+    styles.button,
     styles[variant],
     styles[size],
     styles[shape],
     styles[mode],
     disabled && styles.disabled,
-    isPressed && styles.pressing,
     className
   ].filter(Boolean).join(' ')
-
-  const handleKeyDown = (e) => {
-    if (disabled) return
-    if (e.key === ' ' || e.key === 'Enter') {
-      e.preventDefault()
-      setIsPressed(true)
-      onClick?.()
-    }
-  }
-
-  const handleKeyUp = (e) => {
-    if (e.key === ' ' || e.key === 'Enter') setIsPressed(false)
-  }
 
   return (
     <button
@@ -56,8 +40,6 @@ const Button = ({
       className={buttonClasses}
       onClick={onClick}
       disabled={disabled}
-      onKeyDown={handleKeyDown}
-      onKeyUp={handleKeyUp}
       aria-disabled={disabled}
       tabIndex={disabled ? -1 : 0}
       {...props}

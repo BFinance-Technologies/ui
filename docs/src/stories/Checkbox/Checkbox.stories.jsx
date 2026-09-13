@@ -1,5 +1,5 @@
 import React from 'react';
-import { Checkbox } from '@bf/bfinance-ui';
+import { Checkbox } from '@bfinance/ui';
 
 export default {
   title: 'Components/Checkbox',

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Input } from '@bf/bfinance-ui';
+import { Input } from '@bfinance/ui';
 import SearchIcon from "../../assets/icons/search.svg"
 
 export default {

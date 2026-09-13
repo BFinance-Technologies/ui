@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconButton } from "@bf/bfinance-ui";
+import { IconButton } from "@bfinance/ui";
 import { ScanLine } from '@bfinance/icons';
 
 export default {

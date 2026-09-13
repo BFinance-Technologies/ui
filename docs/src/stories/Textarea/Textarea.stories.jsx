@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Textarea } from '@bf/bfinance-ui';
+import { Textarea } from '@bfinance/ui';
 
 export default {
   title: 'Components/Textarea',

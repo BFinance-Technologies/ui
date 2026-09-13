@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Notification } from '@bf/bfinance-ui';
+import { Notification } from '@bfinance/ui';
 
 export default {
   title: 'Components/Notification',

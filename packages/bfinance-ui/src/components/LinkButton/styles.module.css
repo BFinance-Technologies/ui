@@ -26,12 +26,6 @@
   box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
 }
 
-/* ── Active press ────────────────────────────────────*/
-.button:not(.disabled):active,
-.button.pressing {
-  transform: translateY(1px);
-}
-
 /* ── Variant: default ────────────────────────────────────*/
 .default {
   color: #14151A;
@@ -51,6 +45,14 @@
   fill: rgba(0, 0, 0, 0.60);
 }
 
+.default:not(.disabled):active {
+  color: rgba(0, 0, 0, 0.60);
+}
+
+.default:not(.disabled):active svg {
+  fill: rgba(0, 0, 0, 0.60);
+}
+
 /* ── Mode: destructive ────────────────────────────────────*/
 .destructive {
   color: #E6483D;
@@ -67,6 +69,14 @@
 }
 
 .destructive:not(.disabled):hover svg {
+  fill: rgba(230, 72, 61, 0.70);
+}
+
+.destructive:not(.disabled):active {
+  color: rgba(230, 72, 61, 0.70);
+}
+
+.destructive:not(.disabled):active svg {
   fill: rgba(230, 72, 61, 0.70);
 }
 

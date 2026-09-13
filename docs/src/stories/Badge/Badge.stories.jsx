@@ -1,5 +1,5 @@
 import React from 'react';
-import { Badge } from '@bf/bfinance-ui';
+import { Badge } from '@bfinance/ui';
 import { CheckboxCircleFill, Hashtag }   from '@bfinance/icons'
 
 export default {

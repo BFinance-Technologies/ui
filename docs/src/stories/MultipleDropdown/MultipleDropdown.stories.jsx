@@ -1,5 +1,5 @@
 import React from 'react';
-import { MultipleDropdown } from '@bf/bfinance-ui';
+import { MultipleDropdown } from '@bfinance/ui';
 
 const OPTIONS = [
   { label: 'Option 1', value: 'option1' },

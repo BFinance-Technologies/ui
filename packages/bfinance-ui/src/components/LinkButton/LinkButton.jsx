@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './styles.module.css'
 import Badge from '../Badge/Badge'
 const LinkButton = ({
@@ -14,8 +14,6 @@ const LinkButton = ({
   disabled = false,
   ...props
 }) => {
-  const [isPressed, setIsPressed] = useState(false)
-
   const badgeColorByMode = { default: 'gray', destructive: 'red' }
 
   const buttonClasses = [
@@ -23,23 +21,15 @@ const LinkButton = ({
     styles[size],
     styles[mode],
     disabled && styles.disabled,
-    isPressed && styles.pressing,
     className
   ].filter(Boolean).join(' ')
 
   function handleKeyDown(e) {
     if (disabled) return
-    if (e.key === ' ' || e.key === 'Enter') {
-      setIsPressed(true)
-      if (e.key === ' ') {
-        e.preventDefault()
-        e.currentTarget.click()
-      }
+    if (e.key === ' ') {
+      e.preventDefault()
+      e.currentTarget.click()
     }
-  }
-
-  function handleKeyUp(e) {
-    if (e.key === ' ' || e.key === 'Enter') setIsPressed(false)
   }
 
   return (
@@ -47,7 +37,6 @@ const LinkButton = ({
       href={disabled ? undefined : href}
       className={buttonClasses}
       onKeyDown={handleKeyDown}
-      onKeyUp={handleKeyUp}
       aria-disabled={disabled}
       tabIndex={disabled ? -1 : 0}
       {...props}

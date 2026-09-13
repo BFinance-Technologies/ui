@@ -1,5 +1,5 @@
 import React from 'react';
-import { ButtonGroup } from '@bf/bfinance-ui';
+import { ButtonGroup } from '@bfinance/ui';
 import { ScanLine, ArrowRightLine, TimeLine } from '@bfinance/icons';
 
 export default {
