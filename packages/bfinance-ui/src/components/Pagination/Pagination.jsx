@@ -1,5 +1,7 @@
 import React, { useCallback, useMemo, useRef } from 'react'
 import { ArrowLeftLine, ArrowRightLine, ArrowDownSLine } from '@bfinance/icons'
+import Button from '../Button/Button'
+import IconButton from '../IconButton/IconButton'
 import useDropdown from '../../hooks/useDropdown'
 import styles from './styles.module.css'
 
@@ -178,65 +180,68 @@ const Pagination = ({
     <div className={rootClasses} {...props}>
       {isArrows && (
         <>
-          <button
-            type="button"
-            className={styles.iconCircle}
+          <IconButton
+            variant="tertiary"
+            shape="pill"
+            size={size}
             onClick={handlePrev}
             disabled={disabled || isFirst}
-            aria-label={previousLabel}
+            ariaLabel={previousLabel}
           >
             <ArrowLeftLine />
-          </button>
+          </IconButton>
           {showDots && <Dots activeIndex={activeDotIndex} totalCount={resolvedDotsCount} />}
-          <button
-            type="button"
-            className={styles.iconCircle}
+          <IconButton
+            variant="tertiary"
+            shape="pill"
+            size={size}
             onClick={handleNext}
             disabled={disabled || isLast}
-            aria-label={nextLabel}
+            ariaLabel={nextLabel}
           >
             <ArrowRightLine />
-          </button>
+          </IconButton>
         </>
       )}
 
       {isButtons && (
         <>
           <div className={styles.buttonSlot} data-align="start">
-            <button
-              type="button"
-              className={styles.btnSecondary}
+            <Button
+              variant="secondary"
+              size={size}
               onClick={handlePrev}
               disabled={disabled || isFirst}
             >
               {previousLabel}
-            </button>
+            </Button>
           </div>
           {showDots && <Dots activeIndex={activeDotIndex} totalCount={resolvedDotsCount} />}
           <div className={styles.buttonSlot} data-align="end">
-            <button
-              type="button"
-              className={styles.btnPrimary}
+            <Button
+              variant="primary"
+              size={size}
               onClick={handleNext}
               disabled={disabled || isLast}
             >
               {nextLabel}
-            </button>
+            </Button>
           </div>
         </>
       )}
 
       {isNumbersSm && (
         <>
-          <button
-            type="button"
-            className={styles.ghostArrow}
+          <IconButton
+            variant="ghost"
+            shape="rounded"
+            size="md"
             onClick={handlePrev}
             disabled={disabled || isFirst}
-            aria-label={previousLabel}
+            ariaLabel={previousLabel}
           >
             <ArrowLeftLine />
-          </button>
+          </IconButton>
           {pageItems.map((item, index) =>
             item === '...' ? (
               <span key={`ellipsis-${index}`} className={`${styles.number} ${styles.ellipsis}`}>
@@ -255,15 +260,16 @@ const Pagination = ({
               </button>
             )
           )}
-          <button
-            type="button"
-            className={styles.ghostArrow}
+          <IconButton
+            variant="ghost"
+            shape="rounded"
+            size="md"
             onClick={handleNext}
             disabled={disabled || isLast}
-            aria-label={nextLabel}
+            ariaLabel={nextLabel}
           >
             <ArrowRightLine />
-          </button>
+          </IconButton>
         </>
       )}
 
@@ -275,15 +281,15 @@ const Pagination = ({
             </p>
           )}
           <div className={styles.numbersRow}>
-            <button
-              type="button"
-              className={styles.textButton}
+            <Button
+              variant="ghost"
+              size="sm"
+              leftIcon={<ArrowLeftLine />}
               onClick={handlePrev}
               disabled={disabled || isFirst}
             >
-              <ArrowLeftLine />
-              <span>{previousLabel}</span>
-            </button>
+              {previousLabel}
+            </Button>
             {pageItems.map((item, index) =>
               item === '...' ? (
                 <span key={`ellipsis-${index}`} className={`${styles.number} ${styles.ellipsis}`}>
@@ -302,15 +308,15 @@ const Pagination = ({
                 </button>
               )
             )}
-            <button
-              type="button"
-              className={styles.textButton}
+            <Button
+              variant="ghost"
+              size="sm"
+              rightIcon={<ArrowRightLine />}
               onClick={handleNext}
               disabled={disabled || isLast}
             >
-              <span>{nextLabel}</span>
-              <ArrowRightLine />
-            </button>
+              {nextLabel}
+            </Button>
           </div>
           {showRowsPerPage && (
             <div
@@ -320,20 +326,22 @@ const Pagination = ({
             >
               <span className={styles.rowsPerPageLabel}>{rowsPerPageLabel}</span>
               <div className={styles.rowsDropdownWrap}>
-                <button
-                  type="button"
+                <Button
                   ref={rowsDropdown.buttonRef}
-                  className={styles.rowsDropdownButton}
+                  variant="secondary"
+                  size="sm"
+                  rightIcon={
+                    <span className={`${styles.rowsDropdownIcon} ${rowsDropdown.isOpen ? styles.rotated : ''}`}>
+                      <ArrowDownSLine />
+                    </span>
+                  }
                   onClick={toggleRowsDropdown}
                   disabled={disabled}
                   aria-haspopup="listbox"
                   aria-expanded={rowsDropdown.isOpen}
                 >
-                  <span>{pageSize}</span>
-                  <span className={`${styles.rowsDropdownIcon} ${rowsDropdown.isOpen ? styles.rotated : ''}`}>
-                    <ArrowDownSLine />
-                  </span>
-                </button>
+                  {pageSize}
+                </Button>
                 {rowsDropdown.isOpen && (
                   <div
                     role="listbox"
