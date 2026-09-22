@@ -1,0 +1,488 @@
+/* ── Base ────────────────────────────────────*/
+.pagination {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-Inter);
+}
+
+.pagination.arrows,
+.pagination.buttons {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.pagination.buttons {
+  gap: 16px;
+}
+
+.pagination.numbers.sm {
+  justify-content: center;
+  gap: 8px;
+}
+
+.pagination.numbers.md {
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+  max-width: 892px;
+}
+
+/* ── Arrows type — circular icon buttons ────────────────────────────────────*/
+.iconCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 999px;
+  background: rgba(10, 15, 41, 0.04);
+  color: #14151A;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease-in-out;
+}
+
+.iconCircle svg {
+  width: 100%;
+  height: 100%;
+}
+
+.arrows.md .iconCircle {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+}
+
+.arrows.sm .iconCircle {
+  width: 38px;
+  height: 38px;
+  padding: 8px;
+}
+
+@media (hover: hover) {
+  .iconCircle:not(:disabled):hover {
+    background: rgba(10, 15, 41, 0.08);
+  }
+}
+
+.iconCircle:not(:disabled):active {
+  background: rgba(10, 15, 41, 0.08);
+}
+
+.iconCircle:not(:disabled):focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+}
+
+.iconCircle:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+/* ── Dots indicator (Arrows / Buttons) ────────────────────────────────────*/
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #E9EAEC;
+  flex-shrink: 0;
+  transition: width 0.2s ease-in-out, height 0.2s ease-in-out, background 0.2s ease-in-out;
+}
+
+.dotSize4 {
+  width: 4px;
+  height: 4px;
+}
+
+.dotSize3 {
+  width: 3px;
+  height: 3px;
+}
+
+.dotActive {
+  background: #000;
+}
+
+/* ── Buttons type — Previous / Next text buttons ────────────────────────────────────*/
+.buttonSlot {
+  display: flex;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.buttonSlot[data-align="start"] {
+  justify-content: flex-start;
+}
+
+.buttonSlot[data-align="end"] {
+  justify-content: flex-end;
+}
+
+.btnSecondary,
+.btnPrimary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  transition: background 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.buttons.md .btnSecondary,
+.buttons.md .btnPrimary {
+  height: 40px;
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+
+.buttons.sm .btnSecondary,
+.buttons.sm .btnPrimary {
+  height: 38px;
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+
+.btnSecondary {
+  background: #FFF;
+  border-color: #DEE0E3;
+  color: #14151A;
+}
+
+@media (hover: hover) {
+  .btnSecondary:not(:disabled):hover {
+    border-color: #C8CAD0;
+    background: #F7F7F8;
+  }
+}
+
+.btnSecondary:not(:disabled):active {
+  border-color: #C8CAD0;
+  background: #F7F7F8;
+}
+
+.btnPrimary {
+  background: #14151A;
+  color: #FFF;
+}
+
+@media (hover: hover) {
+  .btnPrimary:not(:disabled):hover {
+    background: #1F2228;
+  }
+}
+
+.btnPrimary:not(:disabled):active {
+  background: #1F2228;
+}
+
+.btnSecondary:disabled,
+.btnPrimary:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.btnSecondary:not(:disabled):focus-visible,
+.btnPrimary:not(:disabled):focus-visible {
+  outline: none;
+  border-color: #924FE8;
+  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+}
+
+/* ── Numbers type — page chips (shared sm/md) ────────────────────────────────────*/
+.number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: none;
+  background: transparent;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.numbers.sm .number {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+
+.numbers.md .number {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+}
+
+@media (hover: hover) {
+  .number:not(:disabled):not(.numberActive):not(.ellipsis):hover {
+    background: rgba(10, 15, 41, 0.04);
+  }
+}
+
+.numberActive {
+  background: rgba(10, 15, 41, 0.04);
+  color: #14151A;
+  cursor: default;
+}
+
+.number.ellipsis {
+  cursor: default;
+}
+
+.number:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.number:not(:disabled):focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+}
+
+/* ── Numbers/sm — ghost edge arrows ────────────────────────────────────*/
+.ghostArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  color: #14151A;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.ghostArrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (hover: hover) {
+  .ghostArrow:not(:disabled):hover {
+    background: rgba(10, 15, 41, 0.04);
+  }
+}
+
+.ghostArrow:not(:disabled):active {
+  background: rgba(10, 15, 41, 0.04);
+}
+
+.ghostArrow:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.ghostArrow:not(:disabled):focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+}
+
+/* ── Numbers/md — full layout ────────────────────────────────────*/
+.itemsCount {
+  margin: 0;
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.numbersRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.textButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  height: 38px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: #14151A;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.textButton svg {
+  width: 16px;
+  height: 16px;
+}
+
+@media (hover: hover) {
+  .textButton:not(:disabled):hover {
+    background: rgba(10, 15, 41, 0.04);
+  }
+}
+
+.textButton:not(:disabled):active {
+  background: rgba(10, 15, 41, 0.04);
+}
+
+.textButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.textButton:not(:disabled):focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+}
+
+/* ── Rows per page ────────────────────────────────────*/
+.rowsPerPage {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.rowsPerPageLabel {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
+}
+
+.rowsDropdownWrap {
+  position: relative;
+}
+
+.rowsDropdownButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 40px;
+  padding: 6px 10px;
+  border: 1px solid #DEE0E3;
+  border-radius: 10px;
+  background: #FFF;
+  color: #14151A;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+@media (hover: hover) {
+  .rowsDropdownButton:not(:disabled):hover {
+    border-color: #C8CAD0;
+    background: #F7F7F8;
+  }
+}
+
+.rowsDropdownButton:not(:disabled):active {
+  border-color: #C8CAD0;
+  background: #F7F7F8;
+}
+
+.rowsDropdownButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.rowsDropdownButton:not(:disabled):focus-visible {
+  outline: none;
+  border-color: #924FE8;
+  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+}
+
+.rowsDropdownIcon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  transition: transform 0.2s ease;
+}
+
+.rowsDropdownIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+.rowsDropdownMenu {
+  position: absolute;
+  right: 0;
+  min-width: 80px;
+  background: #FFF;
+  border: 1px solid #DEE0E3;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(16, 24, 40, 0.1);
+  z-index: 99999;
+  overflow: hidden;
+}
+
+.menuDown {
+  top: calc(100% + 4px);
+}
+
+.menuUp {
+  bottom: calc(100% + 4px);
+}
+
+.rowsDropdownItem {
+  margin: 4px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  color: #14151A;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+  cursor: pointer;
+}
+
+.rowsDropdownItem:hover {
+  background-color: rgba(222, 224, 227, 0.3);
+}
+
+.rowsDropdownItemSelected,
+.rowsDropdownItemFocused {
+  background-color: rgba(222, 224, 227, 0.3);
+}
