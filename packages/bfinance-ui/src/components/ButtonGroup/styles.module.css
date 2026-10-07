@@ -19,7 +19,7 @@
   border-radius: 0;
   background: var(--background-color-white, #fff);
   color: var(--text-color, #14151A);
-  font-family: var(--font-Inter);
+  font-family: var(--typography-family-Inter, Inter);
   font-weight: 500;
   cursor: pointer;
   white-space: nowrap;

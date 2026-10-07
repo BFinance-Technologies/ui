@@ -21,7 +21,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   min-width: 0;
-  font-family: var(--font-Inter);
+  font-family: var(--typography-family-Inter, Inter);
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
@@ -97,7 +97,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   min-width: 0;
-  font-family: var(--font-Inter);
+  font-family: var(--typography-family-Inter, Inter);
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;

@@ -2,7 +2,7 @@
 .pagination {
   display: flex;
   align-items: center;
-  font-family: var(--font-Inter);
+  font-family: var(--typography-family-Inter, Inter);
 }
 
 .pagination.arrows,

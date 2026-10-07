@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   gap: 4px;
-  font-family: var(--font-Inter);
+  font-family: var(--typography-family-Inter, Inter);
   font-weight: 500;
   white-space: nowrap;
   line-height: 20px;
@@ -44,7 +44,7 @@
 
 /* ── Sizes ───────────────────────────────────*/
 .lg {
-  padding: 4px 8px;
+  padding: 2px 8px;
   font-size: 14px;
   line-height: 20px;
 }

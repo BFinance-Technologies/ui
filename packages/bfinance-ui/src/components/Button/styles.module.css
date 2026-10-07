@@ -6,7 +6,7 @@
   gap: 6px;
   border: 1px solid transparent;
   cursor: pointer;
-  font-family: var(--font-Inter);
+  font-family: var(--typography-family-Inter, Inter);
   font-weight: 500;
   transition: all 0.2s ease-in-out;
   white-space: nowrap;

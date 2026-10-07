@@ -10,6 +10,7 @@ export * from "./components/Modal";
 export * from "./components/MultipleDropdown";
 export * from "./components/Notification";
 export * from "./components/Pagination";
+export * from "./components/TabMenu";
 export * from "./components/Tooltip";
 export * from "./components/Toggle";
 export * from "./components/Textarea";
