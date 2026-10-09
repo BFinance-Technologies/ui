@@ -99,12 +99,13 @@
   box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
 }
 
-/* Forced visual states (docs/demos only — no real interaction) */
-.forceHover .field {
+/* Forced visual states (docs/demos only — no real interaction, driven by a
+   plain data attribute rather than a library prop, see Input.stories.jsx) */
+[data-visual-state="hover"] .field {
   border-color: #C8CAD0;
 }
 
-.forceFocus .field {
+[data-visual-state="focus"] .field {
   border-color: #9EA2AD;
   box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
 }
@@ -129,7 +130,7 @@
 }
 
 .destructive .field:focus-within:not(.fieldDisabled),
-.destructive.forceFocus .field {
+.destructive[data-visual-state="focus"] .field {
   border-color: #E6483D;
   box-shadow: 0 0 0 2px rgba(255, 178, 178, 0.60);
 }

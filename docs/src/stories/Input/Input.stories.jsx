@@ -174,7 +174,7 @@ export const CodeHovered = {
   render: Controlled,
   args: {
     ...Code.args,
-    visualState: 'hover',
+    'data-visual-state': 'hover',
   },
 };
 
@@ -182,7 +182,7 @@ export const CodeFocused = {
   render: Controlled,
   args: {
     ...Code.args,
-    visualState: 'focus',
+    'data-visual-state': 'focus',
   },
 };
 
@@ -278,8 +278,8 @@ export const ChipDisabled = {
 
 const STATES = [
   { stateName: 'Default', extra: {} },
-  { stateName: 'Hovered', extra: { visualState: 'hover' } },
-  { stateName: 'Focused', extra: { visualState: 'focus' } },
+  { stateName: 'Hovered', extra: { 'data-visual-state': 'hover' } },
+  { stateName: 'Focused', extra: { 'data-visual-state': 'focus' } },
   { stateName: 'Filled', extra: { value: '1,250.00' } },
   { stateName: 'Disabled', extra: { disabled: true } },
 ];
@@ -334,8 +334,8 @@ const CodeSection = () => (
     <span style={{ fontFamily: 'var(--font-Inter)', fontWeight: 600, fontSize: 16 }}>Type: Code</span>
     <div style={{ display: 'flex', gap: 24 }}>
       <StateRow stateName="Empty" {...Code.args} />
-      <StateRow stateName="Hovered" {...Code.args} visualState="hover" />
-      <StateRow stateName="Active" {...Code.args} visualState="focus" />
+      <StateRow stateName="Hovered" {...Code.args} data-visual-state="hover" />
+      <StateRow stateName="Active" {...Code.args} data-visual-state="focus" />
       <StateRow stateName="Filled" {...CodeFilled.args} />
       <StateRow stateName="Failed" {...CodeFailed.args} />
     </div>

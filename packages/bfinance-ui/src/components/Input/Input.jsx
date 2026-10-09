@@ -89,7 +89,6 @@ const Input = React.forwardRef(({
   size = 'md', // md, xs
   mode = 'default', // default, destructive
   disabled = false,
-  visualState, // optional: 'hover' | 'focus' — forces the visual without real interaction (e.g. for docs/demos)
 
   label,
   optionalText = '(optional)',
@@ -158,6 +157,11 @@ const Input = React.forwardRef(({
     onKeyDown?.(e)
   }
 
+  const handleCodeChange = (e) => {
+    e.target.value = e.target.value.replace(/\D/g, '')
+    onChange?.(e)
+  }
+
   const fieldClasses = [
     styles.field,
     isExternal && styles.fieldAttachedRight,
@@ -175,8 +179,6 @@ const Input = React.forwardRef(({
     isCode && styles.wrapperCode,
     mode === 'destructive' && styles.destructive,
     disabled && styles.disabled,
-    visualState === 'hover' && styles.forceHover,
-    visualState === 'focus' && styles.forceFocus,
     className,
   ].filter(Boolean).join(' ')
 
@@ -211,9 +213,11 @@ const Input = React.forwardRef(({
           {isCode ? (
             <input
               ref={ref}
-              type={htmlType}
+              type="text"
+              inputMode="numeric"
+              pattern="[0-9]*"
               value={value}
-              onChange={onChange}
+              onChange={handleCodeChange}
               placeholder={resolvedPlaceholder}
               disabled={disabled}
               name={name}
