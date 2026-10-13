@@ -1,0 +1,277 @@
+/* ── Base ────────────────────────────────────*/
+.tabMenu {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--typography-family-Inter, Inter);
+}
+
+.tab {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: transparent;
+  color: rgba(0, 0, 0, 0.60);
+  font-family: var(--typography-family-Inter, Inter);
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.tab:focus {
+  outline: none;
+}
+
+.tab:not(.disabled):focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+}
+
+/* ── Disabled ────────────────────────────────────*/
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* ── Icon ────────────────────────────────────*/
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lg .icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.md .icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.sm .icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ── Text ────────────────────────────────────*/
+.text {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ── Sizes: Fill ─────────────────────────────*/
+.fill .tab.lg {
+  padding: 12px 16px;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+
+.fill .tab.md {
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+
+.fill .tab.sm {
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+}
+
+/* ── Sizes: Segmented ────────────────────────*/
+.segmented .tab.lg {
+  padding: 10px 12px;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+
+.segmented .tab.md {
+  padding: 6px 10px;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+
+.segmented .tab.sm {
+  padding: 4px 8px;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+}
+
+/* ── Sizes: Line (text-only tabs) ────────────*/
+.line {
+  gap: 24px;
+}
+
+.line .tab.lg {
+  padding: 10px 0 14px;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+
+.line .tab.md {
+  padding: 6px 0 10px;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+
+.line .tab.sm {
+  padding: 5px 0 7px;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+}
+
+/* ── Shape: Fill (active background) ─────────*/
+.fill .tab.rounded {
+  border-radius: 10px;
+}
+
+.fill .tab.rounded.lg,
+.fill .tab.rounded.md {
+  border-radius: 12px;
+}
+
+.fill .tab.pill {
+  border-radius: 999px;
+}
+
+/* ── Type: Fill ───────────────────────────────*/
+.tabMenu.fill {
+  gap: 8px;
+}
+
+.fill .tab {
+  color: rgba(0, 0, 0, 0.60);
+}
+
+@media (hover: hover) {
+  .fill .tab:not(.disabled):not(.active):hover {
+    background: rgba(10, 15, 41, 0.04);
+    color: var(--text-color);
+  }
+}
+
+.fill .tab:not(.disabled).active {
+  background: rgba(10, 15, 41, 0.04);
+  color: var(--text-color);
+}
+
+/* ── Type: Line ───────────────────────────────*/
+.line .tab::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  border-radius: 999px;
+  background: transparent;
+}
+
+@media (hover: hover) {
+  .line .tab:not(.disabled):not(.active):hover {
+    color: var(--text-color);
+  }
+}
+
+.line .tab:not(.disabled).active {
+  color: var(--text-color);
+}
+
+.line .tab.active::after {
+  background: var(--text-color);
+}
+
+/* ── Type: Segmented ──────────────────────────*/
+.tabMenu.segmented {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  align-items: stretch;
+  gap: 2px;
+  padding: 2px;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.segmented.rounded.lg {
+  border-radius: 12px;
+}
+
+.segmented.rounded.md {
+  border-radius: 12px;
+}
+
+.segmented.rounded.sm {
+  border-radius: 10px;
+}
+
+.segmented.pill {
+  border-radius: 999px;
+}
+
+.segmented .tab {
+  flex: 1 1 0;
+  min-width: 0;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.60);
+}
+
+/* inner radius = container radius - container padding (4px) */
+.segmented .tab.rounded {
+  border-radius: 12px;
+}
+
+.segmented .tab.rounded.lg {
+  border-radius: 14px;
+}
+
+.segmented .tab.rounded.sm {
+  border-radius: 10px;
+}
+
+.segmented .tab.pill {
+  border-radius: 999px;
+}
+
+@media (hover: hover) {
+  .segmented .tab:not(.disabled):not(.active):hover {
+    color: var(--text-color);
+  }
+}
+
+.segmented .tab:not(.disabled).active {
+  background: #FFF;
+  color: var(--text-color);
+  border-radius: var(--measurements-radius-lg, 10px);
+  border: 1px solid var(--border-action-normal, #DEE0E3);
+}
+
+.segmented .tab.pill:not(.disabled).active {
+  border-radius: 999px;
+}
+
+/* ── Badge ────────────────────────────────────*/
+.tab .badge {
+  background-color: rgba(10, 15, 41, 0.04);
+}
+
+.tab.active .badge {
+  color: var(--text-color);
+}
+
+.tab.active .badge svg {
+  fill: var(--text-color);
+}
