@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react'
+import React, { useCallback, useRef, useState, useLayoutEffect } from 'react'
 import { InformationLine, CheckLine } from '@bfinance/icons'
 import { Avatar } from '../Avatar'
 import { Badge } from '../Badge'
@@ -69,6 +69,26 @@ const SelectInput = ({
   })
 
   onKeySelectRef.current = handleSelect
+
+  const panelScrollRef = useRef(null)
+  const [thumb, setThumb] = useState(null) // { top, height } or null when no overflow
+
+  const updateThumb = useCallback(() => {
+    const el = panelScrollRef.current
+    if (!el) return
+    const { scrollTop, scrollHeight, clientHeight } = el
+    if (scrollHeight <= clientHeight) {
+      setThumb(null)
+      return
+    }
+    const height = Math.max((clientHeight / scrollHeight) * clientHeight, 24)
+    const top = (scrollTop / (scrollHeight - clientHeight)) * (clientHeight - height)
+    setThumb({ top, height })
+  }, [])
+
+  useLayoutEffect(() => {
+    if (dropdown.isOpen) updateThumb()
+  }, [dropdown.isOpen, options, updateThumb])
 
   const toggleOpen = () => {
     if (disabled) return
@@ -208,7 +228,14 @@ const SelectInput = ({
         </div>
 
         {dropdown.isOpen && (
-          <div role="listbox" aria-multiselectable={isMultiSelect} className={styles.panel}>
+          <div className={styles.panel}>
+            <div
+              ref={panelScrollRef}
+              role="listbox"
+              aria-multiselectable={isMultiSelect}
+              className={styles.panelScroll}
+              onScroll={updateThumb}
+            >
             {options.length === 0 && (
               <div className={styles.panelEmpty}>No options</div>
             )}
@@ -261,6 +288,13 @@ const SelectInput = ({
                 </div>
               )
             })}
+            </div>
+            {thumb && (
+              <span
+                className={styles.scrollThumb}
+                style={{ top: thumb.top, height: thumb.height }}
+              />
+            )}
           </div>
         )}
       </div>
