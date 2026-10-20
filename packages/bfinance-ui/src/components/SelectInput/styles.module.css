@@ -1,0 +1,491 @@
+/* ── Wrapper ────────────────────────────────────*/
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  width: 100%;
+  min-width: 144px;
+  font-family: var(--font-Inter);
+  position: relative;
+}
+
+/* ── Label row ────────────────────────────────────*/
+.labelRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  padding-left: 2px;
+  width: 100%;
+}
+
+.labelTextGroup {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 2px 0;
+}
+
+.labelText {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+  color: #14151A;
+}
+
+.optionalText {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.requiredMark {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #E6483D;
+}
+
+/* ── Field row ────────────────────────────────────*/
+.fieldRow {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  position: relative;
+}
+
+.field {
+  display: flex;
+  flex: 1 1 0;
+  min-width: 0;
+  box-sizing: border-box;
+  height: 40px;
+  background: #FFF;
+  border: 1px solid #DEE0E3;
+  border-radius: 12px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field:hover:not(.fieldDisabled) {
+  border-color: #C8CAD0;
+}
+
+.destructive .field:hover:not(.fieldDisabled) {
+  border-color: #F5B2AD;
+}
+
+/* md: focus/open keeps the normal gray border, only a purple glow is added.
+   sm: no border or glow at all on focus/open — the panel alone signals state. */
+.field:focus-visible:not(.fieldDisabled) {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+}
+
+.field.fieldOpen:not(.fieldDisabled) {
+  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+}
+
+.sm .field:focus-visible:not(.fieldDisabled),
+.sm .field.fieldOpen:not(.fieldDisabled) {
+  border-color: #DEE0E3;
+  box-shadow: none;
+}
+
+.destructive .field {
+  border-color: #F7C3C0;
+}
+
+.destructive .field:focus-visible:not(.fieldDisabled),
+.destructive .field.fieldOpen:not(.fieldDisabled) {
+  border-color: #F08B85;
+  box-shadow: 0 0 0 2px rgba(255, 178, 178, 0.60);
+}
+
+.fieldDisabled {
+  background: #FFF;
+  border-color: #E9EAEC;
+  cursor: not-allowed;
+}
+
+/* Forced visual states (docs/demos only — no real interaction, driven by a
+   plain data attribute rather than a library prop, see SelectInput.stories.jsx) */
+[data-visual-state="hover"] .field:not(.fieldDisabled) {
+  border-color: #C8CAD0;
+}
+
+[data-visual-state="focus"] .field:not(.fieldDisabled) {
+  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+}
+
+.sm[data-visual-state="focus"] .field:not(.fieldDisabled) {
+  box-shadow: none;
+}
+
+.destructive[data-visual-state="hover"] .field:not(.fieldDisabled) {
+  border-color: #F5B2AD;
+}
+
+.destructive[data-visual-state="focus"] .field:not(.fieldDisabled) {
+  border-color: #F08B85;
+  box-shadow: 0 0 0 2px rgba(255, 178, 178, 0.60);
+}
+
+/* ── Size: sm ────────────────────────────────────*/
+.sm .field {
+  height: 32px;
+  padding: 6px 12px;
+  border-radius: 10px;
+}
+
+/* ── Field content ────────────────────────────────────*/
+.fieldWrap {
+  display: flex;
+  flex: 1 1 0;
+  min-width: 0;
+  align-items: center;
+  gap: 4px;
+}
+
+.placeholderWrap {
+  display: flex;
+  flex: 1 1 0;
+  min-width: 0;
+  align-items: center;
+  gap: 4px;
+}
+
+.icon20 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.icon20 svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.icon20 img {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+}
+
+.icon20Dark {
+  color: #14151A;
+}
+
+.placeholderText {
+  display: flex;
+  flex: 1 1 0;
+  min-width: 0;
+  align-items: center;
+  gap: 4px;
+  padding: 0 4px;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.textFilled {
+  font-weight: 500;
+  color: #14151A;
+}
+
+.destructive .textFilled {
+  color: #E6483D;
+}
+
+.supportText {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: rgba(0, 0, 0, 0.4);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.fieldDisabled .text,
+.fieldDisabled .supportText,
+.fieldDisabled .labelText {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+.fieldDisabled .icon20 {
+  opacity: 0.5;
+}
+
+/* ── Avatar (trigger + items) ────────────────────────────────────*/
+.avatar {
+  flex-shrink: 0;
+}
+
+.fieldDisabled .avatar {
+  filter: grayscale(1);
+  opacity: 0.6;
+}
+
+/* ── Badge slot (⌘K style) ────────────────────────────────────*/
+.badgeSlot {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 0 4px;
+}
+
+.badge {
+  box-sizing: border-box;
+  width: 36px;
+  height: 20px;
+  flex-shrink: 0;
+  padding: 0 2px !important;
+}
+
+.badgeLabel {
+  padding: 0 4px;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+}
+
+/* ── Multi-select tags (read-only, inside field) ────────────────────────────────────*/
+.tagBadge {
+  flex-shrink: 0;
+}
+
+.tagBadgeLabel {
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.overflowCount {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: rgba(0, 0, 0, 0.4);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* ── Helper row ────────────────────────────────────*/
+.helperRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 0;
+  padding-left: 2px;
+  width: 100%;
+}
+
+.helperIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.helperIcon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.helperText {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.disabled .helperIcon,
+.disabled .helperText {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+.destructive .helperIcon,
+.destructive .helperText {
+  color: #E6483D;
+}
+
+/* ── Dropdown panel ────────────────────────────────────*/
+.panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 8px);
+  z-index: 9999;
+  box-sizing: border-box;
+  background: #FFF;
+  border: 1px solid #DEE0E3;
+  border-radius: 12px;
+  box-shadow: 0px 10px 16px -3px rgba(20, 21, 26, 0.08), 0px 3px 6px -2px rgba(20, 21, 26, 0.05);
+  overflow: hidden;
+}
+
+.sm .panel {
+  border-radius: 10px;
+}
+
+.panelScroll {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-height: 220px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 4px 0;
+  scrollbar-width: none;
+}
+
+.panelScroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom scroll thumb overlay — Figma's panel has no native scrollbar at all */
+.scrollThumb {
+  position: absolute;
+  right: 2px;
+  width: 4px;
+  border-radius: 999px;
+  background-color: #E9EAEC;
+  backdrop-filter: blur(5px);
+  pointer-events: none;
+}
+
+.panelEmpty {
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+/* ── Dropdown item ────────────────────────────────────*/
+.item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2px 6px;
+}
+
+.itemWrap {
+  display: flex;
+  flex: 1 1 0;
+  min-width: 0;
+  align-items: center;
+  gap: 4px;
+  box-sizing: border-box;
+  padding: 4px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0);
+}
+
+.itemWrap:hover,
+.itemFocused .itemWrap {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.itemSelected .itemWrap {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.itemText {
+  display: flex;
+  flex: 1 1 0;
+  min-width: 0;
+  align-items: center;
+  gap: 4px;
+  padding: 0 4px;
+}
+
+.itemName {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+  color: #14151A;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.itemHandle {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: rgba(0, 0, 0, 0.4);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.itemCheck {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.itemCheck svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.itemTag {
+  flex-shrink: 0;
+}
+
+/* ── Multi-select checkbox (left of avatar) ────────────────────────────────────*/
+.itemCheckbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  border-radius: 4px;
+  border: 1px solid #DEE0E3;
+  background: #FFF;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.itemCheckboxChecked {
+  background: #14151A;
+  border-color: #14151A;
+}
+
+.itemCheckbox svg {
+  width: 12px;
+  height: 12px;
+  fill: #FFF;
+}
