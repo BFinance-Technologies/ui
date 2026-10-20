@@ -35,7 +35,7 @@
 }
 
 .optionalText {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.1px;
@@ -179,6 +179,10 @@
   width: auto;
   height: 100%;
   object-fit: contain;
+}
+
+.icon20Dark {
+  color: #14151A;
 }
 
 .placeholderText {
@@ -447,7 +451,7 @@
   width: 20px;
   height: 20px;
   flex-shrink: 0;
-  color: #14151A;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .itemCheck svg {

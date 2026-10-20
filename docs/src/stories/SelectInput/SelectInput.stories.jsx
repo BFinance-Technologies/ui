@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SelectInput } from '@bfinance/ui';
-import { SearchLine, InformationLine } from '@bfinance/icons';
+import { InformationLine } from '@bfinance/icons';
 import UserLeadIcon from '../../assets/icons/user-lead.svg';
 
 export default {
@@ -125,7 +125,7 @@ export const MultiSelect = {
     label: 'Label',
     placeholder: 'Select...',
     options: TAGS,
-    leadIcon: <SearchLine />,
+    leadIcon: <img src={UserLeadIcon} alt="" />,
     badge: '⌘K',
     tailIcon: <InformationLine />,
     tailIconTooltip: 'You can select multiple people',

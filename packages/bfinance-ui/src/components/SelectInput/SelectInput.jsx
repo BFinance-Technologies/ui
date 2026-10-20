@@ -143,15 +143,32 @@ const SelectInput = ({
           onClick={toggleOpen}
         >
           <div className={styles.fieldWrap}>
-            {isAvatar && selectedOption ? (
-              <div className={styles.placeholderText}>
-                {selectedOption.avatar && (
-                  <Avatar type="userpic" size="xs" src={selectedOption.avatar} alt="" className={styles.avatar} />
+            {!isMultiSelect && selectedOption ? (
+              <div className={styles.placeholderWrap}>
+                {isAvatar ? (
+                  <Avatar
+                    type={selectedOption.avatar ? 'userpic' : 'empty'}
+                    size="xs"
+                    src={selectedOption.avatar}
+                    alt=""
+                    className={styles.avatar}
+                  />
+                ) : (
+                  leadIcon && <span className={styles.icon20}>{leadIcon}</span>
                 )}
-                <span className={`${styles.text} ${styles.textFilled}`}>{selectedOption.label}</span>
-                {selectedOption.supportText && (
-                  <span className={styles.supportText}>{selectedOption.supportText}</span>
-                )}
+                <div className={styles.placeholderText}>
+                  <span className={`${styles.text} ${styles.textFilled}`}>{selectedOption.label}</span>
+                  {selectedOption.supportText && (
+                    <span className={styles.supportText}>{selectedOption.supportText}</span>
+                  )}
+                  {selectedOption.tag?.label && (
+                    <span className={styles.itemTag}>
+                      <Badge color={selectedOption.tag.color || 'gray'} size="xs" stroke>
+                        {selectedOption.tag.label}
+                      </Badge>
+                    </span>
+                  )}
+                </div>
               </div>
             ) : isAvatar ? (
               <div className={styles.placeholderWrap}>
@@ -194,9 +211,7 @@ const SelectInput = ({
                       )}
                     </>
                   ) : (
-                    <span className={`${styles.text} ${!isMultiSelect && selectedOption ? styles.textFilled : ''}`}>
-                      {!isMultiSelect && selectedOption ? selectedOption.label : placeholder}
-                    </span>
+                    <span className={styles.text}>{placeholder}</span>
                   )}
                 </div>
               </div>
@@ -218,10 +233,10 @@ const SelectInput = ({
             {tailIcon && (
               tailIconTooltip ? (
                 <Tooltip text={tailIconTooltip} tip="bottomRight" size="sm">
-                  <span className={styles.icon20}>{tailIcon}</span>
+                  <span className={`${styles.icon20} ${styles.icon20Dark}`}>{tailIcon}</span>
                 </Tooltip>
               ) : (
-                <span className={styles.icon20}>{tailIcon}</span>
+                <span className={`${styles.icon20} ${styles.icon20Dark}`}>{tailIcon}</span>
               )
             )}
           </div>
