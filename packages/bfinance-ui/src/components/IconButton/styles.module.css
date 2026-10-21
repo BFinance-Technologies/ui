@@ -15,9 +15,8 @@
 }
 
 .button:not(.disabled):focus-visible {
-  border-color: var(--border-action-focus, #924FE8);
   outline: none;
-  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+  box-shadow: var(--effect-focus-ring-light);
 }
 
 /* ── Variants ────────────────────────────────────*/
@@ -25,269 +24,245 @@
 /* ── Primary ────────────────────────────────────*/
 .primary {
   background: var(--background-button-primary);
-  color: var(--text-color-white);
+  color: var(--text-base-inverted);
 }
 
 .primary svg {
-  fill: #FFF;
+  fill: var(--icon-base-inverted);
 }
 
 .primary.disabled {
-  background: #E9EAEC;
-  color: rgba(0, 0, 0, 0.25);
+  background: var(--background-button-primary-disabled);
+  color: var(--text-base-quaternary);
 }
 
 .primary.disabled svg {
-  fill: rgba(0, 0, 0, 0.25);
+  fill: var(--icon-base-quaternary);
 }
 
 @media (hover: hover) {
   .primary:not(.disabled):hover {
-    background: #1F2228;
+    background: var(--background-button-primary-hover);
   }
 }
 
 .primary:not(.disabled):active {
-  background: #1F2228;
+  background: var(--background-button-primary-hover);
 }
 
 /* ── Secondary ────────────────────────────────────*/
 .secondary {
-  background: var(--background-color-white);
-  color: var(--text-color);
-  border: 1px solid #DEE0E3;
+  background: var(--background-button-secondary);
+  color: var(--text-base-primary);
+  border: 1px solid var(--border-action-normal);
 }
 
 .secondary svg {
-  fill: #14151A;
+  fill: var(--icon-base-primary);
 }
 
 @media (hover: hover) {
   .secondary:not(.disabled):hover {
-    border-color: var(--border-gray-hover-color);
-    background: var(--background-color);
+    border-color: var(--border-action-hover);
+    background: var(--background-button-secondary-hover);
   }
 }
 
 .secondary:not(.disabled):active {
-  border-color: var(--border-gray-hover-color);
-  background: var(--background-color);
+  border-color: var(--border-action-hover);
+  background: var(--background-button-secondary-hover);
 }
 
 .secondary.disabled {
-  background: #FFF;
-  color: rgba(0, 0, 0, 0.25);
-  border-color: #E9EAEC;
+  background: var(--background-button-secondary-disabled);
+  color: var(--text-base-quaternary);
+  border-color: var(--border-action-disabled);
 }
 
 .secondary.disabled svg {
-  fill: rgba(0, 0, 0, 0.25);
+  fill: var(--icon-base-quaternary);
 }
 
 /* ── Tertiary ────────────────────────────────────*/
 .tertiary {
-  background: var(--background-gray-color);
-  color: var(--text-color);
+  background: var(--background-button-tertiary);
+  color: var(--text-base-primary);
 }
 
 .tertiary svg {
-  fill: #14151A;
+  fill: var(--icon-base-primary);
 }
 
 .tertiary.disabled {
-  background: rgba(10, 15, 41, 0.04);
-  color: rgba(0, 0, 0, 0.25);
+  background: var(--background-button-tertiary-disabled);
+  color: var(--text-base-quaternary);
 }
 
 .tertiary.disabled svg {
-  fill: rgba(0, 0, 0, 0.25);
+  fill: var(--icon-base-quaternary);
 }
 
 @media (hover: hover) {
   .tertiary:not(.disabled):hover {
-    background: rgba(10, 15, 41, 0.08);
+    background: var(--background-button-tertiary-hover);
   }
 }
 
 .tertiary:not(.disabled):active {
-  background: rgba(10, 15, 41, 0.08);
+  background: var(--background-button-tertiary-hover);
 }
 
 /* ── Ghost ────────────────────────────────────*/
 .ghost {
-  background: transparent;
-  color: var(--text-color);
+  background: var(--background-button-ghost);
+  color: var(--text-base-primary);
 }
 
 .ghost svg {
-  fill: #14151A;
+  fill: var(--icon-base-primary);
 }
 
 @media (hover: hover) {
   .ghost:not(.disabled):hover {
-    background: rgba(10, 15, 41, 0.04);
+    background: var(--background-button-ghost-hover);
   }
 }
 
 .ghost:not(.disabled):active {
-  background: rgba(10, 15, 41, 0.04);
+  background: var(--background-button-ghost-hover);
 }
 
 .ghost.disabled {
-  color: rgba(0,0,0,0.25);
-  background: transparent;
+  color: var(--text-base-quaternary);
+  background: var(--background-button-ghost-disabled);
 }
 
 .ghost.disabled svg {
-  fill: rgba(0,0,0,0.25);
+  fill: var(--icon-base-quaternary);
 }
 
 /* ── Mode: destructive ────────────────────────────────────*/
 
 /* ── Primary Destructive ────────────────────────────────────*/
 .primary.destructive:not(.disabled) {
-  background: #E6483D;
-  color: #FFF;
+  background: var(--background-button-destructive);
+  color: var(--text-base-static-white);
 }
 
 .primary.destructive:not(.disabled) svg {
-  fill: #FFF;
+  fill: var(--icon-base-static-white);
 }
 
 .primary.destructive.disabled {
-  background: #FCE5E4;
-  color: rgba(230,72,61,0.30);
+  background: var(--background-button-destructive-disabled);
+  color: var(--text-status-destructive-tertiary);
 }
 
 .primary.destructive.disabled svg {
-  fill: rgba(230,72,61,0.30);
+  fill: var(--icon-status-destructive-tertiary);
 }
 
 @media (hover: hover) {
   .primary.destructive:not(.disabled):hover {
-    background: #D9281C;
+    background: var(--background-button-destructive-hover);
   }
 }
 
 .primary.destructive:not(.disabled):active {
-  background: #D9281C;
-}
-
-.primary.destructive:not(.disabled):focus-visible {
-  border-color: var(--border-action-focus, #924FE8);
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+  background: var(--background-button-destructive-hover);
 }
 
 /* ── Secondary Destructive ────────────────────────────────────*/
 .secondary.destructive {
-  color: #E6483D;
-  border-color: #E6483D;
-  background: #FFF;
+  color: var(--text-status-destructive);
+  border-color: var(--border-action-destructive);
+  background: var(--background-button-destructive-secondary);
 }
 
 .secondary.destructive svg {
-  fill: #E6483D;
+  fill: var(--icon-status-destructive);
 }
 
 .secondary.destructive.disabled {
-  color: rgba(230, 72, 61, 0.30);
-  border-color: rgba(230,72,61,0.20);
-  background: #FFF;
+  color: var(--text-status-destructive-tertiary);
+  border-color: var(--border-action-destructive-disabled);
+  background: var(--background-button-destructive-secondary-disabled);
 }
 
 .secondary.destructive.disabled svg {
-  fill: rgba(230, 72, 61, 0.30);
+  fill: var(--icon-status-destructive-tertiary);
 }
 
 @media (hover: hover) {
   .secondary.destructive:not(.disabled):hover {
-    color: #E6483D;
-    border-color: #F5B2AD;
-    background: #FDF2F1;
+    color: var(--text-status-destructive);
+    border-color: var(--border-action-destructive-hover);
+    background: var(--background-button-destructive-secondary-hover);
   }
 }
 
 .secondary.destructive:not(.disabled):active {
-  color: #E6483D;
-  border-color: #F5B2AD;
-  background: #FDF2F1;
-}
-
-.secondary.destructive:not(.disabled):focus-visible {
-  border-color: var(--border-action-focus, #924FE8);
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+  color: var(--text-status-destructive);
+  border-color: var(--border-action-destructive-hover);
+  background: var(--background-button-destructive-secondary-hover);
 }
 
 /* ── Tertiary Destructive ────────────────────────────────────*/
 .tertiary.destructive {
-  color: #E6483D;
-  background: rgba(230,72,61,0.10);
+  color: var(--text-status-destructive);
+  background: var(--background-button-destructive-tertiary);
 }
 
 .tertiary.destructive svg {
-  fill: #E6483D;
+  fill: var(--icon-status-destructive);
 }
 
 .tertiary.destructive.disabled {
-  color: rgba(230,72,61,0.30);
-  background: rgba(230,72,61,0.10);
+  color: var(--text-status-destructive-tertiary);
+  background: var(--background-button-destructive-tertiary-disabled);
 }
 
 .tertiary.destructive.disabled svg {
-  fill: rgba(230,72,61,0.30);
+  fill: var(--icon-status-destructive-tertiary);
 }
 
 @media (hover: hover) {
   .tertiary.destructive:not(.disabled):hover {
-    background: rgba(230,72,61,0.15);
+    background: var(--background-button-destructive-tertiary-hover);
   }
 }
 
 .tertiary.destructive:not(.disabled):active {
-  background: rgba(230,72,61,0.15);
-}
-
-.tertiary.destructive:not(.disabled):focus-visible {
-  border-color: var(--border-action-focus, #924FE8);
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+  background: var(--background-button-destructive-tertiary-hover);
 }
 
 /* ── Ghost Destructive ────────────────────────────────────*/
 .ghost.destructive {
-  background: transparent;
-  color: #E6483D;
+  background: var(--background-button-destructive-ghost);
+  color: var(--text-status-destructive);
 }
 
 .ghost.destructive svg {
-  fill: #E6483D;
+  fill: var(--icon-status-destructive);
 }
 
 .ghost.destructive.disabled {
-  background: transparent;
-  color: rgba(230,72,61,0.30);
+  background: var(--background-button-destructive-ghost-disabled);
+  color: var(--text-status-destructive-tertiary);
 }
 
 .ghost.destructive.disabled svg {
-  fill: rgba(230,72,61,0.30);
+  fill: var(--icon-status-destructive-tertiary);
 }
 
 @media (hover: hover) {
   .ghost.destructive:not(.disabled):hover {
-    background: rgba(230,72,61,0.10);
+    background: var(--background-button-destructive-ghost-hover);
   }
 }
 
 .ghost.destructive:not(.disabled):active {
-  background: rgba(230,72,61,0.10);
-}
-
-.ghost.destructive:not(.disabled):focus-visible {
-  border-color: var(--border-action-focus, #924FE8);
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+  background: var(--background-button-destructive-ghost-hover);
 }
 
 /* ── Sizes ────────────────────────────────────*/

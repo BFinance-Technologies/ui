@@ -1,3 +1,8 @@
+@import "./tokens/primitives.css";
+@import "./tokens/theme.css";
+@import "./tokens/device.css";
+@import "./tokens/effects.css";
+
 @font-face {
   font-family: 'Inter';
   src: url('../assets/fonts/Inter/Inter-Regular.otf') format('opentype');
@@ -14,29 +19,28 @@
   font-display: swap;
 }
 
-:root {
-  /* Text colors */
-  --text-color: #14151A;
-  --text-color-white: #FFFFFF;
-  --text-gray-color: rgba(13, 17, 38, 0.40);
-  --text-green-color: #166E3F;
+:root,
+[data-theme] {
+  /*
+   * Legacy aliases — kept so existing components and consumers don't break.
+   * Deprecated: use the Figma tokens from ./tokens/*.css directly.
+   */
+  --text-color: var(--text-base-primary);
+  --text-color-white: var(--text-base-inverted);
+  --text-gray-color: var(--text-base-tertiary);
+  --text-green-color: var(--text-accent-green);
 
-  /* Background colors */
-  --background-color: #F7F7F8;
-  --background-color-white: #FFFFFF;
-  --background-gray-color: rgba(10, 15, 41, 0.04);
-  --background-green-color: #D1FAE4;
-  --background-button-primary: #14151A;
+  --background-color: var(--background-surface-neutral);
+  --background-color-white: var(--background-surface-default);
+  --background-gray-color: var(--background-button-tertiary);
+  --background-green-color: var(--background-badge-green);
 
-  /* Border colors */
-  --border-gray-color: #DEE0E3;
-  --border-gray-hover-color: #C8CAD0;
+  --border-gray-color: var(--border-base-neutral);
+  --border-gray-hover-color: var(--border-action-hover);
 
-  /* Other colors */
-  --circle-green-color: #26BD6C;
+  --circle-green-color: var(--background-toggle-active);
 
   /* Fonts */
   --font-Helvetica-Neue: 'Helvetica Neue', sans-serif;
   --font-Inter: 'Inter', sans-serif;
-  --typography-family-Inter: 'Inter', sans-serif;
 }

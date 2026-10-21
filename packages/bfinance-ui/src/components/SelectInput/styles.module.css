@@ -31,7 +31,7 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.1px;
-  color: #14151A;
+  color: var(--text-base-primary);
 }
 
 .optionalText {
@@ -39,14 +39,14 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.1px;
-  color: rgba(0, 0, 0, 0.4);
+  color: var(--text-base-tertiary);
 }
 
 .requiredMark {
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
-  color: #E6483D;
+  color: var(--text-status-destructive);
 }
 
 /* ── Field row ────────────────────────────────────*/
@@ -63,8 +63,8 @@
   min-width: 0;
   box-sizing: border-box;
   height: 40px;
-  background: #FFF;
-  border: 1px solid #DEE0E3;
+  background: var(--background-input-normal);
+  border: 1px solid var(--border-action-normal);
   border-radius: 12px;
   padding: 10px 12px;
   cursor: pointer;
@@ -72,54 +72,54 @@
 }
 
 .field:hover:not(.fieldDisabled) {
-  border-color: #C8CAD0;
+  border-color: var(--border-action-hover);
 }
 
 .destructive .field:hover:not(.fieldDisabled) {
-  border-color: #F5B2AD;
+  border-color: var(--border-action-destructive-hover);
 }
 
 /* md: focus/open keeps the normal gray border, only a purple glow is added.
    sm: no border or glow at all on focus/open — the panel alone signals state. */
 .field:focus-visible:not(.fieldDisabled) {
   outline: none;
-  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+  box-shadow: var(--effect-focus-ring-light);
 }
 
 .field.fieldOpen:not(.fieldDisabled) {
-  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+  box-shadow: var(--effect-focus-ring-light);
 }
 
 .sm .field:focus-visible:not(.fieldDisabled),
 .sm .field.fieldOpen:not(.fieldDisabled) {
-  border-color: #DEE0E3;
+  border-color: var(--border-action-normal);
   box-shadow: none;
 }
 
 .destructive .field {
-  border-color: #F7C3C0;
+  border-color: var(--border-action-destructive);
 }
 
 .destructive .field:focus-visible:not(.fieldDisabled),
 .destructive .field.fieldOpen:not(.fieldDisabled) {
-  border-color: #F08B85;
-  box-shadow: 0 0 0 2px rgba(255, 178, 178, 0.60);
+  border-color: var(--border-action-focus-destructive-light);
+  box-shadow: var(--effect-focus-ring-destructive);
 }
 
 .fieldDisabled {
-  background: #FFF;
-  border-color: #E9EAEC;
+  background: var(--background-input-disabled);
+  border-color: var(--border-action-disabled);
   cursor: not-allowed;
 }
 
 /* Forced visual states (docs/demos only — no real interaction, driven by a
    plain data attribute rather than a library prop, see SelectInput.stories.jsx) */
 [data-visual-state="hover"] .field:not(.fieldDisabled) {
-  border-color: #C8CAD0;
+  border-color: var(--border-action-hover);
 }
 
 [data-visual-state="focus"] .field:not(.fieldDisabled) {
-  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+  box-shadow: var(--effect-focus-ring-light);
 }
 
 .sm[data-visual-state="focus"] .field:not(.fieldDisabled) {
@@ -127,12 +127,12 @@
 }
 
 .destructive[data-visual-state="hover"] .field:not(.fieldDisabled) {
-  border-color: #F5B2AD;
+  border-color: var(--border-action-destructive-hover);
 }
 
 .destructive[data-visual-state="focus"] .field:not(.fieldDisabled) {
-  border-color: #F08B85;
-  box-shadow: 0 0 0 2px rgba(255, 178, 178, 0.60);
+  border-color: var(--border-action-focus-destructive-light);
+  box-shadow: var(--effect-focus-ring-destructive);
 }
 
 /* ── Size: sm ────────────────────────────────────*/
@@ -166,7 +166,7 @@
   width: 20px;
   height: 20px;
   flex-shrink: 0;
-  color: rgba(0, 0, 0, 0.4);
+  color: var(--icon-base-tertiary);
 }
 
 .icon20 svg {
@@ -182,7 +182,7 @@
 }
 
 .icon20Dark {
-  color: #14151A;
+  color: var(--icon-base-primary);
 }
 
 .placeholderText {
@@ -199,7 +199,7 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.1px;
-  color: rgba(0, 0, 0, 0.4);
+  color: var(--text-base-tertiary);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -207,18 +207,18 @@
 
 .textFilled {
   font-weight: 500;
-  color: #14151A;
+  color: var(--text-base-primary);
 }
 
 .destructive .textFilled {
-  color: #E6483D;
+  color: var(--text-status-destructive);
 }
 
 .supportText {
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
-  color: rgba(0, 0, 0, 0.4);
+  color: var(--text-base-tertiary);
   flex-shrink: 0;
   white-space: nowrap;
 }
@@ -226,7 +226,7 @@
 .fieldDisabled .text,
 .fieldDisabled .supportText,
 .fieldDisabled .labelText {
-  color: rgba(0, 0, 0, 0.25);
+  color: var(--text-base-quaternary);
 }
 
 .fieldDisabled .icon20 {
@@ -281,7 +281,7 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
-  color: rgba(0, 0, 0, 0.4);
+  color: var(--text-base-tertiary);
   flex-shrink: 0;
   white-space: nowrap;
 }
@@ -303,7 +303,7 @@
   width: 16px;
   height: 16px;
   flex-shrink: 0;
-  color: rgba(0, 0, 0, 0.4);
+  color: var(--icon-base-tertiary);
 }
 
 .helperIcon svg {
@@ -317,17 +317,17 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.1px;
-  color: rgba(0, 0, 0, 0.4);
+  color: var(--text-base-tertiary);
 }
 
 .disabled .helperIcon,
 .disabled .helperText {
-  color: rgba(0, 0, 0, 0.25);
+  color: var(--text-base-quaternary);
 }
 
 .destructive .helperIcon,
 .destructive .helperText {
-  color: #E6483D;
+  color: var(--text-status-destructive);
 }
 
 /* ── Dropdown panel ────────────────────────────────────*/
@@ -338,8 +338,8 @@
   top: calc(100% + 8px);
   z-index: 9999;
   box-sizing: border-box;
-  background: #FFF;
-  border: 1px solid #DEE0E3;
+  background: var(--background-surface-default);
+  border: 1px solid var(--border-base-neutral);
   border-radius: 12px;
   box-shadow: 0px 10px 16px -3px rgba(20, 21, 26, 0.08), 0px 3px 6px -2px rgba(20, 21, 26, 0.05);
   overflow: hidden;
@@ -371,7 +371,7 @@
   right: 2px;
   width: 4px;
   border-radius: 999px;
-  background-color: #E9EAEC;
+  background-color: var(--background-surface-neutral-subtle);
   backdrop-filter: blur(5px);
   pointer-events: none;
 }
@@ -380,7 +380,7 @@
   padding: 8px 12px;
   font-size: 14px;
   line-height: 20px;
-  color: rgba(0, 0, 0, 0.4);
+  color: var(--text-base-tertiary);
 }
 
 /* ── Dropdown item ────────────────────────────────────*/
@@ -403,16 +403,16 @@
   padding: 4px 6px;
   border-radius: 6px;
   cursor: pointer;
-  background: rgba(255, 255, 255, 0);
+  background: var(--background-overlay-normal);
 }
 
 .itemWrap:hover,
 .itemFocused .itemWrap {
-  background: rgba(0, 0, 0, 0.04);
+  background: var(--background-overlay-hover);
 }
 
 .itemSelected .itemWrap {
-  background: rgba(0, 0, 0, 0.04);
+  background: var(--background-overlay-active-normal);
 }
 
 .itemText {
@@ -429,7 +429,7 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.1px;
-  color: #14151A;
+  color: var(--text-base-primary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -439,7 +439,7 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
-  color: rgba(0, 0, 0, 0.4);
+  color: var(--text-base-tertiary);
   flex-shrink: 0;
   white-space: nowrap;
 }
@@ -451,7 +451,7 @@
   width: 20px;
   height: 20px;
   flex-shrink: 0;
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--icon-base-secondary);
 }
 
 .itemCheck svg {
@@ -474,18 +474,18 @@
   box-sizing: border-box;
   flex-shrink: 0;
   border-radius: 4px;
-  border: 1px solid #DEE0E3;
-  background: #FFF;
+  border: 1px solid var(--border-action-normal);
+  background: var(--background-checkbox-default);
   transition: background 0.15s ease, border-color 0.15s ease;
 }
 
 .itemCheckboxChecked {
-  background: #14151A;
-  border-color: #14151A;
+  background: var(--background-checkbox-checked);
+  border-color: var(--border-select-primary);
 }
 
 .itemCheckbox svg {
   width: 12px;
   height: 12px;
-  fill: #FFF;
+  fill: var(--icon-base-inverted);
 }

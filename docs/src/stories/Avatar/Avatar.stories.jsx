@@ -4,7 +4,7 @@ import userIcon from '../../assets/icons/userIcon.png';
 
 const PHOTO = userIcon;
 const TYPES = ['initials', 'userpic', 'icon', 'empty'];
-const COLORS = ['grey', 'blue', 'green', 'orange', 'red', 'purple'];
+const COLORS = ['grey', 'blue', 'green', 'orange', 'red', 'purple', 'brand'];
 const THEMES = ['subtle', 'accent'];
 const SIZES = ['2xl', 'xl', 'lg', 'md', 'sm', 'xs'];
 

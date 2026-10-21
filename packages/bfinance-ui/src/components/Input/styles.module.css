@@ -30,7 +30,7 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.1px;
-  color: #14151A;
+  color: var(--text-base-primary);
 }
 
 .optionalText {
@@ -38,7 +38,7 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.1px;
-  color: rgba(0, 0, 0, 0.4);
+  color: var(--text-base-tertiary);
 }
 
 .requiredMark {
@@ -46,7 +46,7 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.1px;
-  color: #E6483D;
+  color: var(--text-status-destructive);
 }
 
 .tooltipTrigger {
@@ -56,7 +56,7 @@
   width: 24px;
   height: 24px;
   flex-shrink: 0;
-  color: rgba(0, 0, 0, 0.4);
+  color: var(--icon-base-tertiary);
   cursor: pointer;
 }
 
@@ -79,40 +79,40 @@
   min-width: 0;
   box-sizing: border-box;
   height: 40px;
-  background: #FFF;
-  border: 1px solid #DEE0E3;
+  background: var(--background-input-normal);
+  border: 1px solid var(--border-action-normal);
   border-radius: 12px;
   padding: 10px 12px;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .field:hover:not(.fieldDisabled) {
-  border-color: #C8CAD0;
+  border-color: var(--border-action-hover);
 }
 
 .destructive .field:hover:not(.fieldDisabled) {
-  border-color: #E6483D;
+  border-color: var(--border-select-destructive);
 }
 
 .field:focus-within:not(.fieldDisabled) {
-  border-color: #9EA2AD;
-  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+  border-color: var(--border-action-focus-light);
+  box-shadow: var(--effect-focus-ring-light);
 }
 
 /* Forced visual states (docs/demos only — no real interaction, driven by a
    plain data attribute rather than a library prop, see Input.stories.jsx) */
 [data-visual-state="hover"] .field {
-  border-color: #C8CAD0;
+  border-color: var(--border-action-hover);
 }
 
 [data-visual-state="focus"] .field {
-  border-color: #9EA2AD;
-  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+  border-color: var(--border-action-focus-light);
+  box-shadow: var(--effect-focus-ring-light);
 }
 
 .fieldDisabled {
-  background: #FFF;
-  border-color: #E9EAEC;
+  background: var(--background-input-disabled);
+  border-color: var(--border-action-disabled);
 }
 
 /* Attached segments (External lead / Button tail) */
@@ -126,13 +126,13 @@
 
 /* Destructive mode */
 .destructive .field {
-  border-color: #E6483D;
+  border-color: var(--border-select-destructive);
 }
 
 .destructive .field:focus-within:not(.fieldDisabled),
 .destructive[data-visual-state="focus"] .field {
-  border-color: #E6483D;
-  box-shadow: 0 0 0 2px rgba(255, 178, 178, 0.60);
+  border-color: var(--border-action-focus-destructive);
+  box-shadow: var(--effect-focus-ring-destructive);
 }
 
 /* ── Size: xs ────────────────────────────────────*/
@@ -196,7 +196,7 @@
   width: 20px;
   height: 20px;
   flex-shrink: 0;
-  color: rgba(0, 0, 0, 0.4);
+  color: var(--icon-base-tertiary);
 }
 
 .icon20 svg {
@@ -212,7 +212,7 @@
   width: 16px;
   height: 16px;
   flex-shrink: 0;
-  color: rgba(0, 0, 0, 0.4);
+  color: var(--icon-base-tertiary);
 }
 
 .leadIconSm svg {
@@ -254,14 +254,14 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.1px;
-  color: #14151A;
+  color: var(--text-base-primary);
   white-space: nowrap;
   flex-shrink: 0;
   padding-left: 4px;
 }
 
 .fieldDisabled .staticAffix {
-  color: rgba(0, 0, 0, 0.25);
+  color: var(--text-base-quaternary);
 }
 
 .input {
@@ -276,21 +276,21 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.1px;
-  color: #14151A;
+  color: var(--text-base-primary);
 }
 
 .input::placeholder {
-  color: rgba(0, 0, 0, 0.4);
+  color: var(--text-base-tertiary);
   font-weight: 400;
 }
 
 .input:disabled {
-  color: rgba(0, 0, 0, 0.25);
+  color: var(--text-base-quaternary);
   cursor: not-allowed;
 }
 
 .input:disabled::placeholder {
-  color: rgba(0, 0, 0, 0.25);
+  color: var(--text-base-quaternary);
 }
 
 /* Search type "Filled" state: typed text becomes medium-weight — driven purely by content */
@@ -315,20 +315,20 @@
 }
 
 .field.fieldCode:hover:not(.fieldDisabled) {
-  border-color: #C8CAD0;
+  border-color: var(--border-action-hover);
 }
 
 .field.fieldCode:focus-within:not(.fieldDisabled) {
-  border-color: #0B0C0E;
+  border-color: var(--border-action-focus);
   box-shadow: none;
 }
 
 .destructive .fieldCode {
-  border-color: #E6483D;
+  border-color: var(--border-select-destructive);
 }
 
 .destructive .fieldCode:focus-within:not(.fieldDisabled) {
-  border-color: #E6483D;
+  border-color: var(--border-action-focus-destructive);
   box-shadow: none;
 }
 
@@ -344,20 +344,20 @@
   font-size: 36px;
   line-height: 44px;
   letter-spacing: -0.7px;
-  color: #14151A;
-  caret-color: #0B0C0E;
+  color: var(--text-base-primary);
+  caret-color: var(--text-base-primary);
 }
 
 .codeInput::placeholder {
-  color: rgba(0, 0, 0, 0.4);
+  color: var(--text-base-tertiary);
 }
 
 .destructive .codeInput {
-  color: #E6483D;
+  color: var(--text-status-destructive);
 }
 
 .codeInput:disabled {
-  color: rgba(0, 0, 0, 0.25);
+  color: var(--text-base-quaternary);
   cursor: not-allowed;
 }
 
@@ -375,8 +375,8 @@
   box-sizing: border-box;
   height: 32px;
   padding: 6px 10px;
-  background: #FFF;
-  border: 1px solid #DEE0E3;
+  background: var(--background-chip-primary);
+  border: 1px solid var(--border-base-neutral);
   border-radius: 8px;
 }
 
@@ -386,7 +386,7 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.1px;
-  color: #14151A;
+  color: var(--text-base-primary);
   white-space: nowrap;
 }
 
@@ -401,7 +401,7 @@
   margin: 0;
   border: none;
   background: transparent;
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--icon-base-secondary);
   cursor: pointer;
 }
 
@@ -413,19 +413,19 @@
 
 @media (hover: hover) {
   .chipRemove:not(:disabled):hover {
-    color: #14151A;
+    color: var(--icon-base-primary);
   }
 }
 
 .chipRemove:disabled {
-  color: rgba(0, 0, 0, 0.25);
+  color: var(--icon-base-quaternary);
   cursor: not-allowed;
 }
 
 .chipRemove:not(:disabled):focus-visible {
   outline: none;
   border-radius: 2px;
-  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+  box-shadow: var(--effect-focus-ring-light);
 }
 
 .badgeSlot {
@@ -487,19 +487,19 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.1px;
-  color: #14151A;
+  color: var(--text-base-primary);
   white-space: nowrap;
 }
 
 .inlineDropdownTrigger:disabled {
-  color: rgba(0, 0, 0, 0.25);
+  color: var(--text-base-quaternary);
   cursor: not-allowed;
 }
 
 .inlineDropdownTrigger:not(:disabled):focus-visible {
   outline: none;
   border-radius: 4px;
-  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+  box-shadow: var(--effect-focus-ring-light);
 }
 
 .inlineDropdownIcon {
@@ -509,12 +509,12 @@
   width: 16px;
   height: 16px;
   flex-shrink: 0;
-  color: rgba(0, 0, 0, 0.40);
+  color: var(--icon-base-tertiary);
   transition: transform 0.2s ease;
 }
 
 .inlineDropdownTrigger:disabled .inlineDropdownIcon {
-  color: rgba(0, 0, 0, 0.25);
+  color: var(--icon-base-quaternary);
 }
 
 .inlineDropdownIcon svg {
@@ -531,8 +531,8 @@
   position: absolute;
   left: 0;
   min-width: 120px;
-  background: #FFF;
-  border: 1px solid #DEE0E3;
+  background: var(--background-surface-default);
+  border: 1px solid var(--border-base-neutral);
   border-radius: 12px;
   box-shadow: 0px 4px 12px rgba(16, 24, 40, 0.1);
   z-index: 99999;
@@ -560,7 +560,7 @@
   margin: 4px;
   padding: 10px 12px;
   border-radius: 6px;
-  color: #14151A;
+  color: var(--text-base-primary);
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
@@ -570,12 +570,12 @@
 }
 
 .inlineDropdownItem:hover {
-  background-color: rgba(222, 224, 227, 0.3);
+  background-color: var(--background-overlay-hover);
 }
 
 .inlineDropdownItemSelected,
 .inlineDropdownItemFocused {
-  background-color: rgba(222, 224, 227, 0.3);
+  background-color: var(--background-overlay-hover);
 }
 
 /* ── External segment (type=external) ────────────────────────────────────*/
@@ -586,8 +586,8 @@
   flex-shrink: 0;
   box-sizing: border-box;
   height: 40px;
-  background: #F7F7F8;
-  border: 1px solid #DEE0E3;
+  background: var(--background-surface-neutral);
+  border: 1px solid var(--border-action-normal);
   border-right: none;
   border-radius: 12px 0 0 12px;
   padding: 10px 12px;
@@ -604,7 +604,7 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.1px;
-  color: #14151A;
+  color: var(--text-base-primary);
   white-space: nowrap;
 }
 
@@ -617,7 +617,7 @@
   box-sizing: border-box;
   height: 40px;
   background: transparent;
-  border: 1px solid #DEE0E3;
+  border: 1px solid var(--border-action-normal);
   border-left: none;
   border-radius: 0 12px 12px 0;
   padding: 10px;
@@ -626,7 +626,7 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.1px;
-  color: #14151A;
+  color: var(--text-base-primary);
   cursor: pointer;
   transition: background 0.2s ease-in-out;
 }
@@ -639,22 +639,22 @@
 
 @media (hover: hover) {
   .inputButton:not(:disabled):hover {
-    background: rgba(10, 15, 41, 0.04);
+    background: var(--background-button-ghost-hover);
   }
 }
 
 .inputButton:not(:disabled):active {
-  background: rgba(10, 15, 41, 0.04);
+  background: var(--background-button-ghost-hover);
 }
 
 .inputButton:disabled {
-  color: rgba(0, 0, 0, 0.25);
+  color: var(--text-base-quaternary);
   cursor: not-allowed;
 }
 
 .inputButton:not(:disabled):focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+  box-shadow: var(--effect-focus-ring-light);
 }
 
 /* ── Helper row ────────────────────────────────────*/
@@ -673,7 +673,7 @@
   width: 16px;
   height: 16px;
   flex-shrink: 0;
-  color: rgba(0, 0, 0, 0.4);
+  color: var(--icon-base-tertiary);
 }
 
 .helperIcon svg {
@@ -687,21 +687,21 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.1px;
-  color: rgba(0, 0, 0, 0.4);
+  color: var(--text-base-tertiary);
 }
 
 .disabled .helperIcon {
-  color: rgba(0, 0, 0, 0.25);
+  color: var(--icon-base-quaternary);
 }
 
 .disabled .helperText {
-  color: rgba(0, 0, 0, 0.25);
+  color: var(--text-base-quaternary);
 }
 
 .destructive .helperIcon {
-  color: #E6483D;
+  color: var(--icon-status-destructive);
 }
 
 .destructive .helperText {
-  color: #E6483D;
+  color: var(--text-status-destructive);
 }

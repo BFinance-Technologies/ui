@@ -22,8 +22,8 @@
 
 .checkboxCustom {
   border-radius: var(--measurements-radius-xs, 4px);
-  border: 1px solid var(--border-action-normal, #C8CAD0);
-  background: var(--background-checkbox-default, #FFF);
+  border: 1px solid var(--border-base-neutral-subtle);
+  background: var(--background-checkbox-default);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,17 +32,18 @@
 }
 
 .checkboxCustom.checked {
-  background: #14151A;
-  border-color: #14151A;
+  background: var(--background-checkbox-checked);
+  border-color: var(--border-select-primary);
 }
 
+/* border blends into the fill */
 .checkboxCustom.disabled {
-  background: #DEE0E3;
-  border-color: #DEE0E3;
+  background: var(--background-checkbox-disabled);
+  border-color: var(--background-checkbox-disabled);
 }
 
 .checkboxInput:focus-visible + .checkboxCustom {
-  box-shadow: 0 0 0 1px #FFF, 0 0 0 2.5px rgba(200, 178, 255, 0.60);
+  box-shadow: 0 0 0 1px var(--border-base-surface), 0 0 0 2.5px var(--effect-focus-ring-light-color);
   outline: none;
 }
 
@@ -55,13 +56,13 @@
 .label {
   font-family: var(--typography-family-Inter, Inter);
   font-weight: 500;
-  color: #14151A;
+  color: var(--text-base-primary);
 }
 
 .caption {
   font-family: var(--typography-family-Inter, Inter);
   font-weight: 400;
-  color: rgba(0, 0, 0, 0.60);
+  color: var(--text-base-secondary);
 }
 
 /* ── Sizes ────────────────────────────────────*/
@@ -106,7 +107,7 @@
 }
 
 .checkboxCustom.checked svg {
-  fill: #FFFFFF;
+  fill: var(--icon-base-inverted);
   stroke-width: 1.5px;
-  stroke: #FFFFFF;
+  stroke: var(--icon-base-inverted);
 }

@@ -7,8 +7,8 @@
   flex-direction: row;
   align-items: flex-start;
   gap: 12px;
-  background: var(--background-color-white);
-  border: 1px solid var(--border-gray-color);
+  background: var(--background-surface-default);
+  border: 1px solid var(--border-base-neutral);
   box-shadow: 0 4px 20px rgba(20, 21, 26, 0.02);
   font-family: var(--typography-family-Inter, Inter);
   z-index: 9999;
@@ -47,15 +47,15 @@
   height: 20px;
 }
 
-.icon_info svg       { fill: #4778F5; }
-.icon_success svg    { fill: #26BD6C; }
-.icon_warning svg    { fill: #F48E2F; }
-.icon_destructive svg { fill: #E6483D; }
+.icon_info svg        { fill: var(--icon-status-info); }
+.icon_success svg     { fill: var(--icon-status-success); }
+.icon_warning svg     { fill: var(--icon-status-warning); }
+.icon_destructive svg { fill: var(--icon-status-destructive); }
 
 .title {
   font-size: 16px;
   font-weight: 500;
-  color: #141514;
+  color: var(--text-base-primary);
   letter-spacing: -0.2px;
   white-space: nowrap;
   overflow: hidden;
@@ -71,7 +71,7 @@
   justify-content: center;
   border: none;
   background: transparent;
-  color: rgba(0, 0, 0, 0.60);
+  color: var(--icon-base-secondary);
   cursor: pointer;
   padding: 0;
   transition: color 0.15s, background 0.15s;
@@ -80,16 +80,16 @@
 .closeButton svg {
   width: 20px;
   height: 20px;
-  fill: rgba(0, 0, 0, 0.60);
+  fill: var(--icon-base-secondary);
 }
 
 .closeButton:hover svg {
-  fill: #141514;
+  fill: var(--icon-base-primary);
 }
 
 .closeButton:focus-visible {  
   outline: none;
-  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+  box-shadow: var(--effect-focus-ring-light);
 }
 
 /* ── Description ───────────────────────────────────── */
@@ -98,7 +98,7 @@
   margin: 4px 0 0;
   font-size: 14px;
   font-weight: 400;
-  color: rgba(0, 0, 0, 0.60);
+  color: var(--text-base-secondary);
   line-height: 20px;
   letter-spacing: -0.1px;
 }

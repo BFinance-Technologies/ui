@@ -13,26 +13,26 @@
   position: relative;
   flex-shrink: 0;
   border-radius: 999px;
-  background: #BABDC5;
+  background: var(--background-toggle-default);
   transition: background 0.2s ease;
 }
 .track.active {
-  background: var(--circle-green-color);
+  background: var(--background-toggle-active);
 }
 .switchWrapper:not(.disabled):hover .track {
-  background: #9EA2AD;
+  background: var(--background-toggle-hover);
 }
 .switchWrapper:not(.disabled):hover .track.active {
-  background: #21A65E;
+  background: var(--background-toggle-active-hover);
 }
 .track:not(.disabled):focus-visible {
-  box-shadow: 0 0 0 1px #FFF, 0 0 0 2.5px rgba(200, 178, 255, 0.60);
+  box-shadow: 0 0 0 1px var(--border-base-surface), 0 0 0 2.5px var(--effect-focus-ring-light-color);
   outline: none;
-  border-radius: var(--measurements-radius-full, 999px);
+  border-radius: var(--measurements-radius-full);
 }
 .track:not(.disabled):focus-visible .active {
-  border-radius: var(--measurements-radius-full, 999px);
-  box-shadow: 0 0 0 1px #FFF, 0 0 0 2.5px rgba(200, 178, 255, 0.60);
+  border-radius: var(--measurements-radius-full);
+  box-shadow: 0 0 0 1px var(--border-base-surface), 0 0 0 2.5px var(--effect-focus-ring-light-color);
   outline: none;
 }
 
@@ -41,17 +41,17 @@
   cursor: not-allowed;
 }
 .disabled .track {
-  background: #E9EAEC;
+  background: var(--background-toggle-disabled);
 }
 .disabled .thumb {
-  background: #C8CAD0;
+  background: var(--background-toggle-handle-disabled);
   box-shadow: none;
 }
 .disabled .track.active {
-  background: #C3F8DC;
+  background: var(--background-toggle-active-disabled);
 }
 .disabled .track.active .thumb {
-  background: #FFF;
+  background: var(--background-toggle-handle);
   box-shadow: none;
 }
 
@@ -60,7 +60,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: #FFF;
+  background: var(--background-toggle-handle);
   border-radius: 50%;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   transition: left 0.2s ease;
@@ -101,12 +101,12 @@
 .label {
   font-family: var(--typography-family-Inter, Inter);
   font-weight: 500;
-  color: #14151A;
+  color: var(--text-base-primary);
 }
 .caption {
   font-family: var(--typography-family-Inter, Inter);
   font-weight: 400;
-  color: rgba(0, 0, 0, 0.60);
+  color: var(--text-base-secondary);
 }
 .sm .label {
   font-size: 14px;

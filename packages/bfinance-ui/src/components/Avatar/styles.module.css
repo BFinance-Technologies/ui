@@ -21,7 +21,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #E8EAED;
+  background-color: var(--background-accent-gray-subtle);
 }
 
 .image {
@@ -48,41 +48,45 @@
 }
 
 /* subtle: light background, colored text */
-.subtle.grey   { background-color: #E9EAEC; color: rgba(0, 0, 0, 0.60); }
-.subtle.blue   { background-color: #E3EAFD; color: #4778F5; }
-.subtle.green  { background-color: #D1FAE4; color: #26BD6C; }
-.subtle.orange { background-color: #FDEAD8; color: #F48E2F; }
-.subtle.red    { background-color: #FCE5E4; color: #E6483D; }
-.subtle.purple { background-color: #ECDFFB; color: #924FE8; }
+.subtle.grey   { background-color: var(--background-accent-gray-subtle);   color: var(--text-base-secondary); }
+.subtle.blue   { background-color: var(--background-accent-blue-subtle);   color: var(--text-accent-blue-accent); }
+.subtle.green  { background-color: var(--background-accent-green-subtle);  color: var(--text-accent-green-accent); }
+.subtle.orange { background-color: var(--background-accent-orange-subtle); color: var(--text-accent-orange-accent); }
+.subtle.red    { background-color: var(--background-accent-red-subtle);    color: var(--text-accent-red-accent); }
+.subtle.purple { background-color: var(--background-accent-purple-subtle); color: var(--text-accent-purple-accent); }
+/* brand tokens are not in the Figma export yet — fallbacks are the Figma values */
+.subtle.brand  { background-color: var(--background-accent-brand-subtle, #D9FFD8); color: var(--text-base-static-dark); }
 
 /* accent: solid background, white text */
-.accent        { color: #FFFFFF; }
-.accent.grey   { background-color: #717684; }
-.accent.blue   { background-color: #4778F5; }
-.accent.green  { background-color: #26BD6C; }
-.accent.orange { background-color: #F48E2F; }
-.accent.red    { background-color: #E6483D; }
-.accent.purple { background-color: #924FE8; }
+.accent        { color: var(--text-base-static-white); }
+.accent.grey   { background-color: var(--background-accent-gray-accent); }
+.accent.blue   { background-color: var(--background-accent-blue-accent); }
+.accent.green  { background-color: var(--background-accent-green-accent); }
+.accent.orange { background-color: var(--background-accent-orange-accent); }
+.accent.red    { background-color: var(--background-accent-red-accent); }
+.accent.purple { background-color: var(--background-accent-purple-accent); }
+/* brand fill is light, so content stays dark */
+.accent.brand  { background-color: var(--background-accent-brand-accent, #34FF32); color: var(--text-base-static-dark); }
 
 /* ── Dots ────────────────────────────────────*/
 .dot {
   position: absolute;
   right: 0;
   border-radius: 50%;
-  border: 2px solid #FFF;
+  border: 2px solid var(--border-base-surface);
   box-sizing: content-box;
 }
 
 /* red — top right */
 .notificationDot {
   top: 0;
-  background-color: #E6483D;
+  background-color: var(--background-surface-destructive-accent);
 }
 
 /* green — bottom right */
 .statusDot {
   bottom: 0;
-  background-color: #26BD6C;
+  background-color: var(--background-surface-success-accent);
 }
 
 .size-xs .dot { right: -1px; }
