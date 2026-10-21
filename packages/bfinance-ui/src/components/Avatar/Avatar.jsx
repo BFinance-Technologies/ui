@@ -7,7 +7,7 @@ import styles from './styles.module.css';
 
 const Avatar = ({
   type = 'initials', // initials, userpic, icon, empty
-  color = 'grey', // grey, blue, green, orange, red, purple (initials, icon)
+  color = 'grey', // grey, blue, green, orange, red, purple, brand (initials, icon)
   theme = 'subtle', // subtle, accent (initials, icon)
   size = 'md', // xs, sm, md, lg, xl, 2xl
   initials = '',

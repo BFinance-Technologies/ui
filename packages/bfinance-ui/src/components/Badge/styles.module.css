@@ -18,7 +18,7 @@
 }
 
 .stroke {
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--border-base-alpha);
 }
 
 /* ── Shape ───────────────────────────────────*/
@@ -91,150 +91,166 @@
 
 /* ── Colors ──────────────────────────────────*/
 .gray {
-  background-color: #E9EAEC;
-  color: rgba(0, 0, 0, 0.60);
+  background-color: var(--background-badge-gray);
+  color: var(--text-base-secondary);
 }
 
 .gray .icon svg {
-  fill: rgba(0, 0, 0, 0.60);
+  fill: var(--icon-base-secondary);
 }
 
 .gray.disabled {
-  color: rgba(0, 0, 0, 0.25);
+  background-color: var(--background-badge-gray-disabled);
+  color: var(--text-base-quaternary);
 }
 
 .gray.disabled .icon svg {
-  fill: rgba(0, 0, 0, 0.25);
+  fill: var(--icon-base-quaternary);
 }
 
 .blue {
-  background-color: #E3EAFD;
-  color: #133A9A;
+  background-color: var(--background-badge-blue);
+  color: var(--text-accent-blue);
 }
 
 .blue .icon svg {
-  fill: #133A9A;
+  fill: var(--icon-accent-blue);
 }
 
 .blue.disabled {
-  background-color: #F0F4FE;
-  color: rgba(51,104, 240, 0.50);
+  background-color: var(--background-badge-blue-disabled);
+  color: var(--text-accent-blue-secondary);
 }
 
 .blue.disabled .icon svg {
-  fill: #3368F0;
-  opacity: 0.5;
+  fill: var(--icon-accent-blue-secondary);
 }
 
 .green {
-  background-color: #D1FAE4;
-  color: #166E3F;
+  background-color: var(--background-badge-green);
+  color: var(--text-accent-green);
 }
 
 .green .icon svg {
-  fill: #166E3F;
+  fill: var(--icon-accent-green);
 }
 
 .green.disabled {
-  background-color: #EDFDF4;
-  color: rgba(38, 189, 108, 0.50);
+  background-color: var(--background-badge-green-disabled);
+  color: var(--text-accent-green-secondary);
 }
 
 .green.disabled .icon svg {
-  fill: #26BD6C;
-  opacity: 0.5;
+  fill: var(--icon-accent-green-secondary);
 }
 
 .orange {
-  background-color: #FDEAD8;
-  color: #AE590A;
+  background-color: var(--background-badge-orange);
+  color: var(--text-accent-orange);
 }
 
 .orange .icon svg {
-  fill: #AE590A;
+  fill: var(--icon-accent-orange);
 }
 
 .orange.disabled {
-  background-color: #FEF4EC;
-  color: rgba(244, 142, 47, 0.50);
+  background-color: var(--background-badge-orange-disabled);
+  color: var(--text-accent-orange-secondary);
 }
 
 .orange.disabled .icon svg {
-  fill: #F48E2F;
-  opacity: 0.5;
+  fill: var(--icon-accent-orange-secondary);
 }
 
 .red {
-  background-color: #FCE5E4;
-  color: #E6483D;
+  background-color: var(--background-badge-red);
+  color: var(--text-accent-red-accent);
 }
 
 .red .icon svg {
-  fill: #E6483D;
+  fill: var(--icon-accent-red-accent);
 }
 
 .red.disabled {
-  background-color: #FDF2F1;
-  color: rgba(230, 72, 61, 0.50);
+  background-color: var(--background-badge-red-disabled);
+  color: var(--text-accent-red-secondary);
 }
 
 .red.disabled .icon svg {
-  fill: #E6483D;
-  opacity: 0.5;
+  fill: var(--icon-accent-red-secondary);
 }
 
 .purple {
-  background-color: #ECDFFB;
-  color: #5314A3;
+  background-color: var(--background-badge-purple);
+  color: var(--text-accent-purple);
 }
 
 .purple .icon svg {
-  fill: #5314A3;
+  fill: var(--icon-accent-purple);
 }
 
 .purple.disabled {
-  background-color: #ECDFFB;
-  color: rgba(135, 61, 230, 0.50);
+  /* Figma token name has a typo: "purple-dsiabled" */
+  background-color: var(--background-badge-purple-dsiabled);
+  color: var(--text-accent-purple-secondary);
 }
 
 .purple.disabled .icon svg {
-  fill: #873DE6;
-  opacity: 0.5;
+  fill: var(--icon-accent-purple-secondary);
 }
 
+/* Brand: "background/badge/brand" is not in the Figma export yet — fallback is the Figma value.
+   The fill is a static light green in both themes, so content is always dark */
+.brand {
+  background-color: var(--background-badge-brand, #34FF32);
+  color: var(--text-base-static-dark);
+}
+
+.brand .icon svg {
+  fill: var(--icon-base-static-dark);
+}
+
+.brand.disabled {
+  color: var(--text-base-static-dark-secondary);
+}
+
+.brand.disabled .icon svg {
+  fill: var(--icon-base-static-dark-secondary);
+}
+
+/* White badges stay white in both themes, so their content is always dark */
 .white {
-  background-color: #FFFFFF;
-  color: rgba(0, 0, 0, 0.60);
+  background-color: var(--background-badge-white);
+  color: var(--text-base-static-dark-secondary);
 }
 
 .white .icon svg {
-  fill: rgba(0, 0, 0, 0.60);
+  fill: var(--icon-base-static-dark-secondary);
 }
 
 .white.disabled {
-  background-color: #FFFFFF;
-  color: rgba(0, 0, 0, 0.25);
+  background-color: var(--background-badge-white-disabled);
+  color: var(--text-base-static-dark-quaternary);
 }
 
 .white.disabled .icon svg {
-  fill: rgba(0, 0, 0, 0.25);
+  fill: var(--icon-base-static-dark-quaternary);
 }
 
 .white-destructive {
-  background-color: #FFFFFF;
-  color: #E6483D;
+  background-color: var(--background-badge-white);
+  color: var(--text-status-destructive);
 }
 
 .white-destructive .icon svg {
-  fill: #E6483D;
-  opacity: 0.7;
+  fill: var(--icon-status-destructive-secondary);
 }
 
 .white-destructive.disabled {
-  background-color: #FFFFFF;
-  color: rgba(230, 72, 61, 0.30);
+  background-color: var(--background-badge-white-disabled);
+  color: var(--text-status-destructive-tertiary);
 }
 
 .white-destructive.disabled .icon svg {
-  fill: rgba(230, 72, 61, 0.30);
+  fill: var(--icon-status-destructive-tertiary);
 }

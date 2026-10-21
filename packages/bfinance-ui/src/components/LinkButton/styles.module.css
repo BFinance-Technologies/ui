@@ -21,82 +21,81 @@
 }
 
 .button:not(.disabled):focus-visible {
-  border-color: var(--border-action-focus, #924FE8);
   outline: none;
-  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+  box-shadow: var(--effect-focus-ring-light);
 }
 
 /* ── Variant: default ────────────────────────────────────*/
 .default {
-  color: #14151A;
+  color: var(--text-base-primary);
 }
 
 .default svg {
-  fill: #14151A;
+  fill: var(--icon-base-primary);
 }
 
 @media (hover: hover) {
   .default:not(.disabled):hover {
-    color: rgba(0, 0, 0, 0.60);
+    color: var(--text-base-secondary);
   }
 }
 
 .default:not(.disabled):hover svg {
-  fill: rgba(0, 0, 0, 0.60);
+  fill: var(--icon-base-secondary);
 }
 
 .default:not(.disabled):active {
-  color: rgba(0, 0, 0, 0.60);
+  color: var(--text-base-secondary);
 }
 
 .default:not(.disabled):active svg {
-  fill: rgba(0, 0, 0, 0.60);
+  fill: var(--icon-base-secondary);
 }
 
 /* ── Mode: destructive ────────────────────────────────────*/
 .destructive {
-  color: #E6483D;
+  color: var(--text-status-destructive);
 }
 
 .destructive svg {
-  fill: #E6483D;
+  fill: var(--icon-status-destructive);
 }
 
 @media (hover: hover) {
   .destructive:not(.disabled):hover {
-    color: rgba(230, 72, 61, 0.70);
+    color: var(--text-status-destructive-secondary);
   }
 }
 
 .destructive:not(.disabled):hover svg {
-  fill: rgba(230, 72, 61, 0.70);
+  fill: var(--icon-status-destructive-secondary);
 }
 
 .destructive:not(.disabled):active {
-  color: rgba(230, 72, 61, 0.70);
+  color: var(--text-status-destructive-secondary);
 }
 
 .destructive:not(.disabled):active svg {
-  fill: rgba(230, 72, 61, 0.70);
+  fill: var(--icon-status-destructive-secondary);
 }
 
 .destructive.disabled {
-  color: rgba(230, 72, 61, 0.30);
+  color: var(--text-status-destructive-tertiary);
 }
 
 .destructive.disabled svg {
-  fill: rgba(230, 72, 61, 0.30);
+  fill: var(--icon-status-destructive-tertiary);
 }
 
 /* ── Disabled ────────────────────────────────────*/
 .disabled {
   cursor: not-allowed;
-  color: rgba(0, 0, 0, 0.25);
+  color: var(--text-base-quaternary);
   opacity: 1;
 }
 
 .disabled svg {
-  fill: rgba(0, 0, 0, 0.25);
+  fill: var(--icon-base-quaternary);
 }
 
 /* ── Sizes ────────────────────────────────────*/

@@ -12,7 +12,7 @@
   gap: 8px;
   border: none;
   background: transparent;
-  color: rgba(0, 0, 0, 0.60);
+  color: var(--text-base-secondary);
   font-family: var(--typography-family-Inter, Inter);
   font-weight: 500;
   cursor: pointer;
@@ -26,7 +26,7 @@
 
 .tab:not(.disabled):focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+  box-shadow: var(--effect-focus-ring-light);
 }
 
 /* ── Disabled ────────────────────────────────────*/
@@ -41,6 +41,11 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+}
+
+/* icons follow the tab text color (secondary → primary on hover/active) */
+.icon svg {
+  fill: currentColor;
 }
 
 .lg .icon svg {
@@ -154,19 +159,19 @@
 }
 
 .fill .tab {
-  color: rgba(0, 0, 0, 0.60);
+  color: var(--text-base-secondary);
 }
 
 @media (hover: hover) {
   .fill .tab:not(.disabled):not(.active):hover {
-    background: rgba(10, 15, 41, 0.04);
-    color: var(--text-color);
+    background: var(--background-button-ghost-hover);
+    color: var(--text-base-primary);
   }
 }
 
 .fill .tab:not(.disabled).active {
-  background: rgba(10, 15, 41, 0.04);
-  color: var(--text-color);
+  background: var(--background-button-ghost-hover);
+  color: var(--text-base-primary);
 }
 
 /* ── Type: Line ───────────────────────────────*/
@@ -183,16 +188,16 @@
 
 @media (hover: hover) {
   .line .tab:not(.disabled):not(.active):hover {
-    color: var(--text-color);
+    color: var(--text-base-primary);
   }
 }
 
 .line .tab:not(.disabled).active {
-  color: var(--text-color);
+  color: var(--text-base-primary);
 }
 
 .line .tab.active::after {
-  background: var(--text-color);
+  background: var(--border-select-primary);
 }
 
 /* ── Type: Segmented ──────────────────────────*/
@@ -203,7 +208,7 @@
   align-items: stretch;
   gap: 2px;
   padding: 2px;
-  background: rgba(0, 0, 0, 0.08);
+  background: var(--background-overlay-active-hover);
 }
 
 .segmented.rounded.lg {
@@ -226,7 +231,7 @@
   flex: 1 1 0;
   min-width: 0;
   justify-content: center;
-  color: rgba(0, 0, 0, 0.60);
+  color: var(--text-base-secondary);
 }
 
 /* inner radius = container radius - container padding (4px) */
@@ -248,15 +253,15 @@
 
 @media (hover: hover) {
   .segmented .tab:not(.disabled):not(.active):hover {
-    color: var(--text-color);
+    color: var(--text-base-primary);
   }
 }
 
 .segmented .tab:not(.disabled).active {
-  background: #FFF;
-  color: var(--text-color);
-  border-radius: var(--measurements-radius-lg, 10px);
-  border: 1px solid var(--border-action-normal, #DEE0E3);
+  background: var(--background-surface-default);
+  color: var(--text-base-primary);
+  border-radius: var(--measurements-radius-lg);
+  border: 1px solid var(--border-action-normal);
 }
 
 .segmented .tab.pill:not(.disabled).active {
@@ -265,13 +270,13 @@
 
 /* ── Badge ────────────────────────────────────*/
 .tab .badge {
-  background-color: rgba(10, 15, 41, 0.04);
+  background-color: var(--background-button-ghost-hover);
 }
 
 .tab.active .badge {
-  color: var(--text-color);
+  color: var(--text-base-primary);
 }
 
 .tab.active .badge svg {
-  fill: var(--text-color);
+  fill: var(--icon-base-primary);
 }

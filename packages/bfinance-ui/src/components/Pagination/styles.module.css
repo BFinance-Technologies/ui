@@ -39,7 +39,7 @@
   width: 6px;
   height: 6px;
   border-radius: 999px;
-  background: #E9EAEC;
+  background: var(--background-surface-neutral-subtle);
   flex-shrink: 0;
   transition: width 0.2s ease-in-out, height 0.2s ease-in-out, background 0.2s ease-in-out;
 }
@@ -55,7 +55,7 @@
 }
 
 .dotActive {
-  background: #000;
+  background: var(--background-surface-inverted);
 }
 
 /* ── Buttons type — align Previous/Next to opposite edges ────────────────────────────────────*/
@@ -81,7 +81,7 @@
   flex-shrink: 0;
   border: none;
   background: transparent;
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--text-base-secondary);
   font-weight: 500;
   cursor: pointer;
   transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
@@ -107,13 +107,13 @@
 
 @media (hover: hover) {
   .number:not(:disabled):not(.numberActive):not(.ellipsis):hover {
-    background: rgba(10, 15, 41, 0.04);
+    background: var(--background-button-ghost-hover);
   }
 }
 
 .numberActive {
-  background: rgba(10, 15, 41, 0.04);
-  color: #14151A;
+  background: var(--background-button-ghost-hover);
+  color: var(--text-base-primary);
   cursor: default;
 }
 
@@ -128,7 +128,7 @@
 
 .number:not(:disabled):focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px rgba(200, 178, 255, 0.50);
+  box-shadow: var(--effect-focus-ring-light);
 }
 
 /* ── Numbers/md — full layout ────────────────────────────────────*/
@@ -140,7 +140,7 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.1px;
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--text-base-secondary);
 }
 
 .numbersRow {
@@ -165,7 +165,7 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.1px;
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--text-base-secondary);
   white-space: nowrap;
 }
 
@@ -193,8 +193,8 @@
   position: absolute;
   right: 0;
   min-width: 80px;
-  background: #FFF;
-  border: 1px solid #DEE0E3;
+  background: var(--background-surface-default);
+  border: 1px solid var(--border-base-neutral);
   border-radius: 12px;
   box-shadow: 0px 4px 12px rgba(16, 24, 40, 0.1);
   z-index: 99999;
@@ -213,7 +213,7 @@
   margin: 4px;
   padding: 10px 12px;
   border-radius: 6px;
-  color: #14151A;
+  color: var(--text-base-primary);
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
@@ -222,10 +222,10 @@
 }
 
 .rowsDropdownItem:hover {
-  background-color: rgba(222, 224, 227, 0.3);
+  background-color: var(--background-overlay-hover);
 }
 
 .rowsDropdownItemSelected,
 .rowsDropdownItemFocused {
-  background-color: rgba(222, 224, 227, 0.3);
+  background-color: var(--background-overlay-hover);
 }

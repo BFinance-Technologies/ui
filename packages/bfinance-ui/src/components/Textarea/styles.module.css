@@ -17,7 +17,7 @@
   font-weight: 500;
   line-height: 20px;
   letter-spacing: -0.1px;
-  color: var(--text-color, #14151A);
+  color: var(--text-base-primary);
 }
 
 .optional {
@@ -25,14 +25,14 @@
   font-weight: 500;
   line-height: 20px;
   letter-spacing: -0.1px;
-  color: rgba(0, 0, 0, 0.40);
+  color: var(--text-base-tertiary);
 }
 
 .required {
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
-  color: #E53E3E;
+  color: var(--text-status-destructive);
 }
 
 .infoIconWrapper {
@@ -43,30 +43,35 @@
 }
 
 .infoIconWrapper svg {
-  color: rgba(0, 0, 0, 0.25);
+  color: var(--icon-base-quaternary);
   fill: currentColor;
   transition: color 150ms ease, fill 150ms ease, stroke 150ms ease;
 }
 
 .infoIconWrapper:hover svg {
-  color: #14151A;
+  color: var(--icon-base-primary);
 }
 
 .textareaContainer {
   position: relative;
-  border: 1px solid var(--border-gray-color, #E9EAEC);
+  border: 1px solid var(--border-action-normal);
   border-radius: 12px;
-  background: var(--background-color-white, #FFF);
+  background: var(--background-input-normal);
   padding: 12px;
 }
 
-.textareaContainer:focus-within {
-  border-color: var(--border-gray-hover-color, #DEE0E3);
+.textareaContainer:hover:not(.containerDisabled) {
+  border-color: var(--border-action-hover);
+}
+
+.textareaContainer:focus-within:not(.containerDisabled) {
+  border-color: var(--border-action-focus-light);
+  box-shadow: var(--effect-focus-ring-light);
 }
 
 .containerDisabled {
-  background: var(--background-color-white, #FFF);
-  border: 1px solid var(--border-gray-color, #E9EAEC);
+  background: var(--background-input-disabled);
+  border: 1px solid var(--border-action-disabled);
   opacity: 0.5;
 }
 
@@ -82,12 +87,12 @@
   font-weight: 500;
   line-height: 20px;
   letter-spacing: -0.1px;
-  color: var(--text-color, #14151A);
+  color: var(--text-base-primary);
   background: transparent;
 }
 
 .textarea::placeholder {
-  color: rgba(0, 0, 0, 0.40);
+  color: var(--text-base-tertiary);
   font-weight: 400;
   font-size: 14px;  
   line-height: 20px;
@@ -110,14 +115,20 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  color: rgba(0, 0, 0, 0.40);
+  color: var(--icon-base-tertiary);
   line-height: 1;
+}
+
+.clearButton:focus-visible {
+  outline: none;
+  border-radius: 4px;
+  box-shadow: var(--effect-focus-ring-light);
 }
 
 .clearButton svg {
   width: 16px;
   height: 16px;
-  fill: rgba(0, 0, 0, 0.60);
+  fill: var(--icon-base-secondary);
 }
 
 .footer {
@@ -140,14 +151,13 @@
   line-height: 20px;
   letter-spacing: -0.1px;
   font-family: var(--typography-family-Inter, Inter);
-  color: rgba(0, 0, 0, 0.40);
+  color: var(--text-base-tertiary);
 }
 
 .helperText svg {
   width: 16px;
   height: 16px;
-  color: rgba(0, 0, 0, 0.4);
+  color: var(--icon-base-tertiary);
   fill: currentColor;
-  fill-opacity: 0.4;
   transition: color 150ms ease, fill 150ms ease, stroke 150ms ease;
 }

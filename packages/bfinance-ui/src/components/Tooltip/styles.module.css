@@ -4,12 +4,12 @@
   align-items: center;
   cursor: pointer;
 
-  color: rgba(0, 0, 0, 0.25); 
+  color: var(--icon-base-quaternary); 
   transition: color 0.2s ease;
 }
 
 .wrapper:hover {
-  color: #14151A; 
+  color: var(--icon-base-primary); 
 }
 
 .tooltip {
@@ -23,11 +23,11 @@
   justify-content: center;
   align-items: flex-start;
   
-  border-radius: var(--measurements-radius-sm, 6px);
-  border: 1px solid var(--border-action-normal, #DEE0E3);
-  background: var(--background-surface-default, #FFF);
+  border-radius: var(--measurements-radius-sm);
+  border: 1px solid var(--border-base-neutral);
+  background: var(--background-surface-default);
   box-shadow: 0 10px 16px -3px rgba(20, 21, 26, 0.05), 0 3px 10px -2px rgba(20, 21, 26, 0.02);
-  color: #14151a;
+  color: var(--text-base-primary);
   
   font-family: var(--typography-family-Inter, Inter);
   opacity: 0;
@@ -63,19 +63,19 @@
 /* Headline only for lg */
 .headline {
   font-weight: 500;
-  color: #14151a;
+  color: var(--text-base-primary);
   white-space: wrap;
 }
 
 .text {
-  color: #14151a;
+  color: var(--text-base-primary);
   font-weight: 500;
   white-space: wrap;
 }
 
 .text.headline {
   font-weight: 400;
-  color: rgba(0, 0, 0, 0.60);
+  color: var(--text-base-secondary);
   white-space: wrap;
 }
 

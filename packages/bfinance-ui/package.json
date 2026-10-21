@@ -19,6 +19,7 @@
     "dist"
   ],
   "scripts": {
+    "tokens": "node scripts/build-tokens.js",
     "build": "vite build",
     "clean": "rimraf dist"
   },
