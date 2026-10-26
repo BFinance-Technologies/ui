@@ -1,0 +1,136 @@
+.container {
+  display: inline-flex;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.sm.container {
+  gap: 8px;
+}
+
+.md.container {
+  gap: 12px;
+}
+
+.wrapperDisabled {
+  cursor: not-allowed;
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.control {
+  position: relative;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  border-radius: 999px;
+  background: var(--background-checkbox-default);
+  border: 1px solid var(--border-action-normal);
+  box-shadow: var(--shadow-xs);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sm .control {
+  width: 16px;
+  height: 16px;
+}
+
+.md .control {
+  width: 20px;
+  height: 20px;
+}
+
+.sm .dot {
+  width: 8px;
+  height: 8px;
+}
+
+.md .dot {
+  width: 10px;
+  height: 10px;
+}
+
+.dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  background: var(--background-checkbox-checked);
+}
+
+.control.checked {
+  border-width: 2px;
+  border-color: var(--border-select-primary);
+}
+
+.container:hover:not(.wrapperDisabled) .control:not(.checked) {
+  border-color: var(--border-action-hover);
+}
+
+.input:focus-visible + .control {
+  box-shadow: var(--effect-focus-ring-select);
+}
+
+[data-visual-state="hover"] .control:not(.checked) {
+  border-color: var(--border-action-hover);
+}
+
+[data-visual-state="focus"] .control {
+  box-shadow: var(--effect-focus-ring-select);
+}
+
+.control.disabled {
+  box-shadow: none;
+  border-color: var(--border-action-disabled);
+}
+
+.control.disabled .dot {
+  background: var(--background-checkbox-disabled);
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.controlWithLabel {
+  margin-top: 2px;
+}
+
+.label {
+  font-family: var(--font-Inter);
+  font-weight: 500;
+  color: var(--text-base-primary);
+}
+
+.caption {
+  font-family: var(--font-Inter);
+  font-weight: 400;
+  color: var(--text-base-secondary);
+}
+
+.sm .label,
+.sm .caption {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+}
+
+.md .label,
+.md .caption {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+
+.wrapperDisabled .label,
+.wrapperDisabled .caption {
+  color: var(--text-base-quaternary);
+}

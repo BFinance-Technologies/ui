@@ -14,4 +14,13 @@
   /* Focus ring for fields in error state (Input). Name assumed — rename to match the Figma effect style */
   --effect-focus-ring-destructive-color: rgba(255, 178, 178, 0.6);
   --effect-focus-ring-destructive: 0 0 0 2px var(--effect-focus-ring-destructive-color);
+
+  /* Focus ring for circular/compact selection controls (Radio, Checkbox) — a thin
+     inner ring matching the control's own background, plus a wider purple glow.
+     Name assumed — rename to match the Figma effect style. */
+  --effect-focus-ring-select-color: rgba(200, 178, 255, 0.6);
+  --effect-focus-ring-select: 0 0 0 1px var(--background-checkbox-default), 0 0 0 2.5px var(--effect-focus-ring-select-color);
+
+  /* Drop shadow + inner shadow applied to the resting (non-focused) control — "Shadows/xs" in Figma */
+  --shadow-xs: 0px 1px 2px 0px rgba(20, 21, 26, 0.05), inset 0px -1px 1px 0px rgba(0, 0, 0, 0.1);
 }
