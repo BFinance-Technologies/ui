@@ -1,0 +1,147 @@
+.breadcrumbs {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.link {
+  display: flex;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+}
+
+.link:hover .icon,
+.link:hover .label {
+  color: var(--text-base-primary);
+}
+
+.stack {
+  display: flex;
+  align-items: center;
+}
+
+.sm .stack {
+  gap: 4px;
+}
+
+.md .stack {
+  gap: 6px;
+}
+
+.icon,
+.iconActive {
+  display: flex;
+  flex-shrink: 0;
+  color: var(--text-base-secondary);
+}
+
+.iconActive {
+  color: var(--text-base-primary);
+}
+
+.sm .icon,
+.sm .iconActive {
+  width: 14px;
+  height: 14px;
+}
+
+.md .icon,
+.md .iconActive {
+  width: 16px;
+  height: 16px;
+}
+
+.icon svg,
+.iconActive svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.label,
+.labelActive {
+  font-family: var(--font-Inter);
+  font-weight: 500;
+  color: var(--text-base-secondary);
+  white-space: nowrap;
+}
+
+.labelActive {
+  color: var(--text-base-primary);
+}
+
+.sm .label,
+.sm .labelActive {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0;
+}
+
+.md .label,
+.md .labelActive {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+}
+
+.divider {
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  justify-content: center;
+  color: var(--text-base-secondary);
+}
+
+.sm .divider {
+  width: 14px;
+  height: 14px;
+}
+
+.md .divider {
+  width: 16px;
+  height: 16px;
+}
+
+.divider svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.slash {
+  font-family: var(--font-Inter);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--text-base-secondary);
+}
+
+.more {
+  font-family: var(--font-Inter);
+  font-weight: 500;
+  color: var(--text-base-secondary);
+}
+
+.sm .more {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0;
+}
+
+.md .more {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+}
